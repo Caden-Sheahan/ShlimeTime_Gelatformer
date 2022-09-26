@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Explode
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX
