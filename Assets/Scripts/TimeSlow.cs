@@ -10,7 +10,7 @@ public class TimeSlow : MonoBehaviour
     bool canSlowDown = true;
     public static Action slowTimeEvent;
     public static Action jetpackSlowTimeEvent;
-    float currentTimeScale = 1;
+    //float currentTimeScale = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,17 +56,16 @@ public class TimeSlow : MonoBehaviour
                 slowTimeEvent?.Invoke();
                 jetpackSlowTimeEvent?.Invoke();
                 Time.timeScale *= 1.05f;
-                Debug.Log(Time.fixedDeltaTime);
                 Time.fixedDeltaTime = Time.timeScale * .02f;
             }
             else
-            {
-                slowTimeEvent?.Invoke();
-                jetpackSlowTimeEvent?.Invoke();
+            {    
                 speedTime = false;
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
                 canSlowDown = true;
+                slowTimeEvent?.Invoke();
+                jetpackSlowTimeEvent?.Invoke();
             }
         }
     }
