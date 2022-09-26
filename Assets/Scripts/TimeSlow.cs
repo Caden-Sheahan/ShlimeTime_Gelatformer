@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class TimeSlow : MonoBehaviour
     bool slowTime = false;
     bool speedTime = false;
     bool canSlowDown = true;
+    public static Action slowTimeEvent;
+    public static Action jetpackSlowTimeEvent;
+    //float currentTimeScale = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +19,7 @@ public class TimeSlow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if(canSlowDown)
             {
@@ -31,6 +35,9 @@ public class TimeSlow : MonoBehaviour
         {
             if(Time.timeScale >= 0.2f)
             {
+                //currentTimeScale *= .995f;
+                slowTimeEvent?.Invoke();
+                jetpackSlowTimeEvent?.Invoke();
                 Time.timeScale *= .995f;
                 Time.fixedDeltaTime *= Time.timeScale;
             }
@@ -45,15 +52,20 @@ public class TimeSlow : MonoBehaviour
         {
             if (Time.timeScale <= 1)
             {
-                Time.timeScale *= 1.001f;
-                Time.fixedDeltaTime *= Time.timeScale;
+                //currentTimeScale *= 1.001f;
+                slowTimeEvent?.Invoke();
+                jetpackSlowTimeEvent?.Invoke();
+                Time.timeScale *= 1.05f;
+                Time.fixedDeltaTime = Time.timeScale * .02f;
             }
             else
-            {
+            {    
                 speedTime = false;
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
                 canSlowDown = true;
+                slowTimeEvent?.Invoke();
+                jetpackSlowTimeEvent?.Invoke();
             }
         }
     }
