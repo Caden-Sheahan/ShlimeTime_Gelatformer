@@ -19,11 +19,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // REMOVE THIS LATER
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            Respawn();
-        }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,10 +34,17 @@ public class Player : MonoBehaviour
         {
             resPos = collision.transform.position;
         }
+
+        if (collision.CompareTag("Obstacles"))
+        {
+            Respawn();
+        }
     }
 
     public void Respawn()
     {
+        // If you don't touch the checkpoint first, you don't respawn. Ez fix,
+        // just wanted to mention it.
         if(resPos != Vector2.zero)
         {
             transform.position = resPos;
