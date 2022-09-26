@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
         //Rotates Z rotation of the player towards the mouse
         player.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.A))
         {
             //Turns the difference into a specific length value
             float distance = difference.magnitude;

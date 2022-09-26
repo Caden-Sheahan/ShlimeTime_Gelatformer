@@ -24,6 +24,7 @@ public class Swing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.D) && allowGrapple)
         {
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -49,10 +50,6 @@ public class Swing : MonoBehaviour
 
             }
             
-        }
-        else if (Input.GetKey(KeyCode.D) && rb.velocity.x == 0)
-        {
-            rb.velocity = new Vector2(1, rb.velocity.y);
         }
         if (distJoint.enabled)
         {
