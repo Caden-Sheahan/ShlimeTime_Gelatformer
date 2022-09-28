@@ -19,22 +19,27 @@ public class JetPack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Finds the direction the player needs to move
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var mouseDir = mousePos - gameObject.transform.position;
         
         if (Input.GetKey(KeyCode.S))
         {
+            //Makes gravity 0 while using ability
             rb.gravityScale = 0;
+            //Applies force towards the mouse
             rb.AddForce(mouseDir * speedForceApplied * Time.deltaTime);
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
+            //Restores gravity
             rb.gravityScale = 1;
         }
     }
 
     public void Handle_TimeSlowEvent()
     {
+        //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
         speedForceApplied = tempSpeed / Time.fixedDeltaTime;
     }

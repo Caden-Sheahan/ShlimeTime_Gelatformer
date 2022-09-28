@@ -27,6 +27,7 @@ public class Swing : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.D) && allowGrapple)
         {
+            //Shoots the grapple
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
             lineRender.SetPosition(0, mousePos);
             lineRender.SetPosition(1, transform.position);
@@ -34,10 +35,11 @@ public class Swing : MonoBehaviour
             distJoint.enabled = true;
             lineRender.enabled = true;
 
-            //rb.velocity = new Vector2(rb.velocity.x * 8f, rb.velocity.y);
+            
         }
         else if (Input.GetKeyUp(KeyCode.D) && allowGrapple)
         {
+            //Recalls the grapple
             distJoint.enabled = false;
             lineRender.enabled = false;
 
@@ -59,6 +61,7 @@ public class Swing : MonoBehaviour
 
     void canGrapple()
     {
+        //Checks if the player can grapple
         allowGrapple = true;
     }
 }
