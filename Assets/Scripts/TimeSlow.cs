@@ -10,7 +10,6 @@ public class TimeSlow : MonoBehaviour
     bool canSlowDown = true;
     public static Action slowTimeEvent;
     public static Action jetpackSlowTimeEvent;
-    //float currentTimeScale = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +22,7 @@ public class TimeSlow : MonoBehaviour
         {
             if(canSlowDown)
             {
+                //Starts the process of slowing down time
                 canSlowDown = false;
                 TimeSlowDown();
             } 
@@ -35,7 +35,7 @@ public class TimeSlow : MonoBehaviour
         {
             if(Time.timeScale >= 0.2f)
             {
-                //currentTimeScale *= .995f;
+                //Slows down time until it reaches 1/5 speed
                 slowTimeEvent?.Invoke();
                 jetpackSlowTimeEvent?.Invoke();
                 Time.timeScale *= .995f;
@@ -43,6 +43,7 @@ public class TimeSlow : MonoBehaviour
             }
             else
             {
+                //Time has reached 1/5 speed
                 slowTime = false;
                 Invoke("TimeSpeedUp", 0.5f);
             }
@@ -52,7 +53,7 @@ public class TimeSlow : MonoBehaviour
         {
             if (Time.timeScale <= 1)
             {
-                //currentTimeScale *= 1.001f;
+                //Speeds up time back to normal
                 slowTimeEvent?.Invoke();
                 jetpackSlowTimeEvent?.Invoke();
                 Time.timeScale *= 1.05f;
@@ -60,6 +61,7 @@ public class TimeSlow : MonoBehaviour
             }
             else
             {    
+                //Makes sure that time is exactly 1.0
                 speedTime = false;
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
@@ -72,11 +74,13 @@ public class TimeSlow : MonoBehaviour
     void TimeSlowDown()
     {
         //  ZA WARUDO
+        //Starts the slow down of time
         slowTime = true;
     }
 
     void TimeSpeedUp()
     {
+        //Starts the speed up of time
         speedTime = true;
     }
 }

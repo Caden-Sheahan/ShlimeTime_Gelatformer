@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Explode")
         {
+            //Pushed player away from the explosion of the first ability
             var force = transform.position - collision.transform.position;
             force.Normalize();
             GetComponent<Rigidbody2D>().AddForce(force * speedForceApplied);
@@ -32,11 +33,13 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "RespawnPoint")
         {
+            //Assigns respawn position
             resPos = collision.transform.position;
         }
 
         if (collision.CompareTag("Obstacles"))
         {
+            //Checks if player collided with an obstacle
             Respawn();
         }
     }
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour
         // just wanted to mention it.
         if(resPos != Vector2.zero)
         {
+            //Kill player
             transform.position = resPos;
             rb.velocity = Vector2.zero;
         }
@@ -55,16 +59,11 @@ public class Player : MonoBehaviour
 
     public void Handle_TimeSlowEvent()
     {
+        //Adjusts force relative to time
         float tempSpeed = (float)(defaultSpeed * .02);
         speedForceApplied = tempSpeed / Time.fixedDeltaTime;
 
-        //if (Time.fixedDeltaTime == .02f)
-        //{
-            //speedForceApplied = 500;
-        //}
-        //speedForceApplied *= speedRate;
-        //Vector2 modifier = rb.velocity * (speedRate-1);
-        //rb.velocity = new Vector2(rb.velocity.x + modifier.x, rb.velocity.y + modifier.y);
+        
     }
     
     
