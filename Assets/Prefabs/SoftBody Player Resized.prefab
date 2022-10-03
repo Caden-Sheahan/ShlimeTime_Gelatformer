@@ -497,9 +497,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.29227325
+  m_Distance: 0.28921852
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597006167755
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.22222514
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597006167749
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -537,9 +537,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2770008
+  m_Distance: 0.277001
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!1 &8859236597059220385
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.22130527
+  m_Distance: 0.22130525
   m_MaxDistanceOnly: 0
 --- !u!231 &8859236597059193948
 SpringJoint2D:
@@ -703,9 +703,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19423088
+  m_Distance: 0.18813448
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597059193951
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -723,9 +723,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.22130527
+  m_Distance: 0.22130525
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597059193945
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -745,7 +745,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.22222514
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!1 &8859236597295512733
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,9 +909,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.18558134
+  m_Distance: 0.18016489
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597295512731
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.25481793
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597295512725
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.25305974
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!1 &8859236597432681834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,9 +1115,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2516834
+  m_Distance: 0.25937057
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597432681832
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1135,9 +1135,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.000000029802322, y: 0.49999905}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.31528524
+  m_Distance: 0.31529513
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236597432681826
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1155,9 +1155,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.26200765
+  m_Distance: 0.26200786
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!1 &8859236598204794358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1302,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2770008
+  m_Distance: 0.277001
   m_MaxDistanceOnly: 0
 --- !u!231 &8859236598204794357
 SpringJoint2D:
@@ -1321,9 +1321,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.23056394
+  m_Distance: 0.23627134
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236598204794356
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1341,9 +1341,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2770008
+  m_Distance: 0.277001
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236598204794350
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 0.25481793
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!1 &8859236598377692278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1508,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.26200765
+  m_Distance: 0.26200786
   m_MaxDistanceOnly: 0
 --- !u!231 &8859236598377692277
 SpringJoint2D:
@@ -1527,9 +1527,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.29728875
+  m_Distance: 0.292399
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236598377692276
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1547,9 +1547,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.26200765
+  m_Distance: 0.26200786
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
 --- !u!231 &8859236598377692270
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -1567,6 +1567,6 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.22130527
+  m_Distance: 0.22130525
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 10
