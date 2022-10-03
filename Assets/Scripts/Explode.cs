@@ -18,17 +18,8 @@ public class Explode : MonoBehaviour
 
     void remove()
     {
+        //Destroys the explosion after a short time
         Destroy(this.gameObject);
     }
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            var force = transform.position - collision.transform.position;
-            force.Normalize();
-            GetComponent<Rigidbody2D>().AddForce(-force * 500);
-        }
-    }
-    */
+    
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Explode
+  - RespawnPoint
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -46,9 +48,12 @@ TagManager:
   - name: Background
     uniqueID: 804715509
     locked: 0
+  - name: Player
+    uniqueID: 3869899537
+    locked: 0
   - name: Ground
     uniqueID: 1817791465
     locked: 0
-  - name: Player
-    uniqueID: 3869899537
+  - name: Objects
+    uniqueID: 1960842251
     locked: 0
