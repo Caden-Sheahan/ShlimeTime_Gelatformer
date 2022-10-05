@@ -39,18 +39,7 @@ public class Swing : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.D) && allowGrapple)
         {
-            //Recalls the grapple
-            distJoint.enabled = false;
-            lineRender.enabled = false;
-
-            allowGrapple = false;
-            Invoke("canGrapple", .4f);
-
-            if ((rb.velocity.x < 11 && rb.velocity.y < 11) && (rb.velocity.x > -11 && rb.velocity.y > -11))
-            {
-                rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y * 1.5f);
-
-            }
+            Recall();
             
         }
         if (distJoint.enabled)
@@ -63,5 +52,21 @@ public class Swing : MonoBehaviour
     {
         //Checks if the player can grapple
         allowGrapple = true;
+    }
+
+    public void Recall()
+    {
+        //Recalls the grapple
+        distJoint.enabled = false;
+        lineRender.enabled = false;
+
+        allowGrapple = false;
+        Invoke("canGrapple", .4f);
+
+        if ((rb.velocity.x < 11 && rb.velocity.y < 11) && (rb.velocity.x > -11 && rb.velocity.y > -11))
+        {
+            rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y * 1.5f);
+
+        }
     }
 }
