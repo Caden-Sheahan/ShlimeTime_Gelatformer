@@ -27,7 +27,10 @@ public class JetPack : MonoBehaviour
         {
             //Makes gravity 0 while using ability
             rb.gravityScale = 0;
+            rb.mass = 0.05f;
             //Applies force towards the mouse
+            mouseDir.x *= .45f;
+            mouseDir.y *= 1.1f;
             rb.AddForce(mouseDir * speedForceApplied * Time.deltaTime);
             
         }
@@ -35,6 +38,7 @@ public class JetPack : MonoBehaviour
         {
             //Restores gravity
             rb.gravityScale = 1;
+            rb.mass = .1f;
         }
     }
 

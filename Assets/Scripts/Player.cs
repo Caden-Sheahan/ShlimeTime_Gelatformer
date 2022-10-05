@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Vector2 resPos;
     public Rigidbody2D rb;
-    float speedForceApplied = 500;
+    float speedForceApplied = 300;
     float defaultSpeed;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<Rigidbody2D>().velocity.x >= 13f || GetComponent<Rigidbody2D>().velocity.y >= 13f)
+        {
+            GetComponent<Rigidbody2D>().velocity *= 0.95f;
+        }
+        if (GetComponent<Rigidbody2D>().velocity.x <= -13f || GetComponent<Rigidbody2D>().velocity.y <= -13f)
+        {
+            GetComponent<Rigidbody2D>().velocity *= 0.95f;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

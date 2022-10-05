@@ -9,9 +9,9 @@ public class AbiltiesEnabler : MonoBehaviour
     void Start()
     {
         //mainCam.GetComponent<Shoot>().enabled = false;
-        //gameObject.GetComponent<TimeSlow>().enabled = false;
-        //gameObject.GetComponent<JetPack>().enabled = false;
-        //gameObject.GetComponent<Swing>().enabled = false;
+        gameObject.GetComponent<TimeSlow>().enabled = false;
+        gameObject.GetComponent<JetPack>().enabled = false;
+        gameObject.GetComponent<Swing>().enabled = false;
     }
 
     // Update is called once per frame
