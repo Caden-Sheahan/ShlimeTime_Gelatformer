@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
         if(resPos != Vector2.zero)
         {
             //Kill player
+            gameObject.GetComponent<Swing>().Recall();
             transform.position = resPos;
             rb.velocity = Vector2.zero;
         }
@@ -65,8 +66,11 @@ public class Player : MonoBehaviour
 
         
     }
-    
-    
+    public void OnDestroy()
+    {
+        TimeSlow.slowTimeEvent -= Handle_TimeSlowEvent;
+    }
+
     //Ignore this
     //call from another Class
     //gameObjectVariableName.GetComponent<Codename>.functionCalled

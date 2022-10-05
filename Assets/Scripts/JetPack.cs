@@ -29,6 +29,7 @@ public class JetPack : MonoBehaviour
             rb.gravityScale = 0;
             //Applies force towards the mouse
             rb.AddForce(mouseDir * speedForceApplied * Time.deltaTime);
+            
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
@@ -42,5 +43,10 @@ public class JetPack : MonoBehaviour
         //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
         speedForceApplied = tempSpeed / Time.fixedDeltaTime;
+    }
+
+    public void OnDestroy()
+    {
+        TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
     }
 }
