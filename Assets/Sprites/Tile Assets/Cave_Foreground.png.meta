@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06be6ccb127c9d84da4cc4f8afb883c3
-      internalID: 284651930
+      spriteID: 89e596057f7b6fa45a8b8198a8210355
+      internalID: -207357852
       vertices: []
       indices: 
       edges: []
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ba974bfe46d0c64799438f8695d5d8c
-      internalID: -2030672495
+      spriteID: bdcd3d7a17405224c914efe020f419c8
+      internalID: -1971364864
       vertices: []
       indices: 
       edges: []
@@ -172,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e0fff6c43da5da42af057ebbc38c68a
-      internalID: 1890235997
+      spriteID: b93824c48439e184a9f0c09d20a997de
+      internalID: -709961217
       vertices: []
       indices: 
       edges: []
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e7815482cf4adc49b7c3b1ddbc9e427
-      internalID: 1607717570
+      spriteID: 15ac63b85740a8f409e9dc1fda387c34
+      internalID: 1404675029
       vertices: []
       indices: 
       edges: []
@@ -214,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659bdb9c41b3c9042837c3ea42c284dd
-      internalID: -1784773788
+      spriteID: 0ddb5293bb1807746818cd9ac0f9b885
+      internalID: -1092874343
       vertices: []
       indices: 
       edges: []
@@ -235,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4dbf165c2393ce48aee5d8e27139d45
-      internalID: 1468428500
+      spriteID: 30ab7b7ec82426c42b3ce7029fbd275d
+      internalID: -867543552
       vertices: []
       indices: 
       edges: []
@@ -256,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626d2477711ebc24786700b45032dff0
-      internalID: -123978945
+      spriteID: 4890ac8405c35c442a852191321afee1
+      internalID: 2057923741
       vertices: []
       indices: 
       edges: []
@@ -277,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eac4443b35451e4c8928bc2a20d748c
-      internalID: 290793097
+      spriteID: 0cae30c0e5c286049833bb6aade459b9
+      internalID: -283735527
       vertices: []
       indices: 
       edges: []
@@ -298,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e177d5688988cd5439342429a98159fe
-      internalID: -1122406389
+      spriteID: 5522c551ab327504ba10fc46f4b92253
+      internalID: -984018885
       vertices: []
       indices: 
       edges: []
@@ -319,29 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613cb5ee1d7d34044a2ca8e7c478ca1d
-      internalID: 573899959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cave_Foreground_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c49b9bb8e93a26940bd53d681bb6a899
-      internalID: -262266029
+      spriteID: b792626b57bceb44cb52a5495174dd21
+      internalID: 983894771
       vertices: []
       indices: 
       edges: []
@@ -357,17 +336,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cave_Foreground_10: -262266029
-      Cave_Foreground_6: -123978945
-      Cave_Foreground_4: -1784773788
-      Cave_Foreground_3: 1607717570
-      Cave_Foreground_1: -2030672495
-      Cave_Foreground_2: 1890235997
-      Cave_Foreground_5: 1468428500
-      Cave_Foreground_9: 573899959
-      Cave_Foreground_0: 284651930
-      Cave_Foreground_7: 290793097
-      Cave_Foreground_8: -1122406389
+      Cave_Foreground_6: 2057923741
+      Cave_Foreground_4: -1092874343
+      Cave_Foreground_3: 1404675029
+      Cave_Foreground_1: -1971364864
+      Cave_Foreground_2: -709961217
+      Cave_Foreground_5: -867543552
+      Cave_Foreground_9: 983894771
+      Cave_Foreground_0: -207357852
+      Cave_Foreground_7: -283735527
+      Cave_Foreground_8: -984018885
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
