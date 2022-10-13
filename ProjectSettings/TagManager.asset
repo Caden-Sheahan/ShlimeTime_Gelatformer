@@ -8,6 +8,8 @@ TagManager:
   - Explode
   - RespawnPoint
   - Obstacles
+  - PU1
+  - PU2
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class AbiltiesEnabler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //mainCam.GetComponent<Shoot>().enabled = false;
+        mainCam.GetComponent<Shoot>().enabled = false;
         gameObject.GetComponent<TimeSlow>().enabled = false;
         gameObject.GetComponent<JetPack>().enabled = false;
         gameObject.GetComponent<Swing>().enabled = false;
@@ -22,11 +22,11 @@ public class AbiltiesEnabler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "PU1")
         {
             mainCam.GetComponent<Shoot>().enabled = true;
         }
-        if (collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "PU2")
         {
             gameObject.GetComponent<TimeSlow>().enabled = true;
         }
