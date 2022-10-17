@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clipName: 
-    clip: {fileID: 0}
+  - clipName: SlimeHitGround1
+    clip: {fileID: 8300000, guid: a8c9ba95992387b469a65f65aa26e979, type: 3}
     volume: 0
     pitch: 0
     loop: 0
