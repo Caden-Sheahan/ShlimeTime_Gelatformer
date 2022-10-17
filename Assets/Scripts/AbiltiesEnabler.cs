@@ -30,11 +30,11 @@ public class AbiltiesEnabler : MonoBehaviour
         {
             gameObject.GetComponent<TimeSlow>().enabled = true;
         }
-        if (collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "PU3")
         {
             gameObject.GetComponent<JetPack>().enabled = true;
         }
-        if (collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "PU4")
         {
             gameObject.GetComponent<Swing>().enabled = true;
         }

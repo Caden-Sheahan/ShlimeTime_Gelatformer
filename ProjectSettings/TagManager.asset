@@ -10,6 +10,8 @@ TagManager:
   - Obstacles
   - PU1
   - PU2
+  - PU3
+  - PU4
   layers:
   - Default
   - TransparentFX
