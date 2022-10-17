@@ -6,8 +6,14 @@ public class Player : MonoBehaviour
 {
     Vector2 resPos;
     public Rigidbody2D rb;
-    float speedForceApplied = 300;
+    float speedForceApplied = 150;
     float defaultSpeed;
+    public GameObject child1;
+    public GameObject child2;
+    public GameObject child3;
+    public GameObject child4;
+    public GameObject child5;
+    public GameObject child6;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +60,6 @@ public class Player : MonoBehaviour
         {
             //Play SplatSound1
             FindObjectOfType<AudioManager>().Play("SlimeSplat1");
-            Debug.Log("HIT GROUND");
         }
     }
 
@@ -68,6 +73,12 @@ public class Player : MonoBehaviour
             gameObject.GetComponent<Swing>().Recall();
             transform.position = resPos;
             rb.velocity = Vector2.zero;
+            child1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child3.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child5.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child6.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         
     }
