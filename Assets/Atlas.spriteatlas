@@ -47,6 +47,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 00a0a1f1134087d4f8ebd73c30e36436, type: 3}
     - {fileID: 2800000, guid: d526062b06fbef343926b9b8bf7d7ecb, type: 3}
     - {fileID: 2800000, guid: 465bdb5a5a6105046bbc9caa30f9f0fc, type: 3}
+    - {fileID: 2800000, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -62,6 +63,18 @@ SpriteAtlas:
   - {fileID: -207357852, guid: 00a0a1f1134087d4f8ebd73c30e36436, type: 3}
   - {fileID: 1404675029, guid: 00a0a1f1134087d4f8ebd73c30e36436, type: 3}
   - {fileID: -709961217, guid: 00a0a1f1134087d4f8ebd73c30e36436, type: 3}
+  - {fileID: 210417499, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: -2033611222, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 1543288778, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 1658422157, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 625401270, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 1898851225, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 1966082936, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 2075858128, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 79792546, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: -899454490, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: -1189783551, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
+  - {fileID: 843776398, guid: 4b9dd61478c7a9b4e9929d10f784c6e8, type: 3}
   - {fileID: -356514513, guid: 465bdb5a5a6105046bbc9caa30f9f0fc, type: 3}
   - {fileID: -1409577204, guid: 465bdb5a5a6105046bbc9caa30f9f0fc, type: 3}
   - {fileID: -462220486, guid: 465bdb5a5a6105046bbc9caa30f9f0fc, type: 3}
@@ -167,6 +180,18 @@ SpriteAtlas:
   - Cave_Foreground_0
   - Cave_Foreground_3
   - Cave_Foreground_2
+  - Cave_Tileset (1)_9
+  - Cave_Tileset (1)_11
+  - Cave_Tileset (1)_10
+  - Cave_Tileset (1)_2
+  - Cave_Tileset (1)_3
+  - Cave_Tileset (1)_0
+  - Cave_Tileset (1)_1
+  - Cave_Tileset (1)_6
+  - Cave_Tileset (1)_7
+  - Cave_Tileset (1)_4
+  - Cave_Tileset (1)_5
+  - Cave_Tileset (1)_8
   - ObstaclesTileset2_19
   - ObstaclesTileset2_18
   - ObstaclesTileset2_13
