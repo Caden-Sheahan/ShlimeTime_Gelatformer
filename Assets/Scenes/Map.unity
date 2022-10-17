@@ -50280,6 +50280,7 @@ GameObject:
   - component: {fileID: 804706198}
   - component: {fileID: 804706197}
   - component: {fileID: 804706196}
+  - component: {fileID: 804706209}
   m_Layer: 0
   m_Name: SlimeBoi
   m_TagString: Player
@@ -50622,6 +50623,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &804706209
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804706195}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.7
 --- !u!1001 &830631284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59845,10 +59862,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clipName: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - clipName: SlimeSplat1
+    clip: {fileID: 8300000, guid: a8c9ba95992387b469a65f65aa26e979, type: 3}
+    volume: 0.03
+    pitch: 1.25
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1710857046
