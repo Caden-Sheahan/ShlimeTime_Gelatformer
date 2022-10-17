@@ -64421,7 +64421,7 @@ MonoBehaviour:
   sounds:
   - clipName: SlimeSplat1
     clip: {fileID: 8300000, guid: a8c9ba95992387b469a65f65aa26e979, type: 3}
-    volume: 0.03
+    volume: 1
     pitch: 1.25
     loop: 0
     source: {fileID: 0}
