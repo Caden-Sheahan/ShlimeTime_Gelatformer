@@ -49,6 +49,13 @@ public class Player : MonoBehaviour
             //Checks if player collided with an obstacle
             Respawn();
         }
+        
+        if (collision.CompareTag("Wall"))
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("SlimeSplat1");
+            Debug.Log("HIT GROUND");
+        }
     }
 
     public void Respawn()
