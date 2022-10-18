@@ -21814,7 +21814,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!231 &416183544
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -59022,7 +59022,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!231 &764442712
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -65218,9 +65218,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1.4459534, y: -1.0103731, z: 0}
-      leftTangent: {x: 0.27331924, y: 0.38359165, z: 0}
-      rightTangent: {x: -0.29305267, y: -0.4112873, z: 0}
+    - position: {x: 1.3563409, y: -0.9745287, z: 0}
+      leftTangent: {x: 0.27331674, y: 0.3835932, z: 0}
+      rightTangent: {x: -0.29305136, y: -0.4112879, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -65320,8 +65320,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.05113411, y: -0.047974348, z: 0}
-    m_Extent: {x: 1.7574404, y: 1.7201314, z: 0}
+    m_Center: {x: 0.030775666, y: -0.047976017, z: 0}
+    m_Extent: {x: 1.737082, y: 1.7201331, z: 0}
 --- !u!4 &1180037327
 Transform:
   m_ObjectHideFlags: 0
@@ -65921,7 +65921,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!231 &1284659955
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -65939,7 +65939,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.32781455
+  m_Distance: 0.3109478
   m_DampingRatio: 0
   m_Frequency: 30
 --- !u!231 &1284659956
@@ -65959,7 +65959,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.3120804
+  m_Distance: 0.305834
   m_DampingRatio: 0
   m_Frequency: 30
 --- !u!231 &1284659957
@@ -65979,7 +65979,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.37598225
+  m_Distance: 0.35570228
   m_DampingRatio: 0
   m_Frequency: 30
 --- !u!232 &1284659958
@@ -65999,7 +65999,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.3120804
+  m_Distance: 0.305834
   m_MaxDistanceOnly: 0
 --- !u!58 &1284659959
 CircleCollider2D:
@@ -66077,7 +66077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284659953}
   m_LocalRotation: {x: -0, y: -0, z: 0.22573851, w: 0.97418797}
-  m_LocalPosition: {x: 1.03, y: -0.714, z: 0}
+  m_LocalPosition: {x: 0.985, y: -0.66, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67999,7 +67999,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!231 &1438734017
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -68037,7 +68037,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.32781455
+  m_Distance: 0.3109478
   m_DampingRatio: 0
   m_Frequency: 30
 --- !u!231 &1438734019
@@ -68077,7 +68077,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.32781455
+  m_Distance: 0.3109478
   m_MaxDistanceOnly: 0
 --- !u!58 &1438734021
 CircleCollider2D:
@@ -68205,7 +68205,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!231 &1459380978
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -68223,7 +68223,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.3120804
+  m_Distance: 0.305834
   m_DampingRatio: 0
   m_Frequency: 30
 --- !u!231 &1459380979
@@ -69507,7 +69507,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1732504932
 SpriteRenderer:
   m_ObjectHideFlags: 0
