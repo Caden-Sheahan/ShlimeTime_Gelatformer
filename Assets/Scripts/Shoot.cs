@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject rocketPrefab;
 
     public float bulletSpeed = 15f;
+    bool shootCooldown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +42,24 @@ public class Shoot : MonoBehaviour
 
     void fireRocket(Vector2 direction, float rotationZ)
     {
-        //Creates a rocket
-        GameObject r = Instantiate(rocketPrefab) as GameObject;
-        //Sets rocket position to player position
-        r.transform.position = player.transform.position;
-        //Rotates the rocket towards the mouse
-        r.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-        //Sends the rocket flying
-        r.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        if(shootCooldown == false)
+        {
+            shootCooldown = true;
+            Invoke("canShoot", .3f);
+            //Creates a rocket
+            GameObject r = Instantiate(rocketPrefab) as GameObject;
+            //Sets rocket position to player position
+            r.transform.position = player.transform.position;
+            //Rotates the rocket towards the mouse
+            r.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+            //Sends the rocket flying
+            r.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        }
+        
+    }
+
+    void canShoot()
+    {
+        shootCooldown = false;
     }
 }
