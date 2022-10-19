@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CameraMovement.unity
     guid: b7b497c5a678b2342bb4b5f09f4c85de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SuperKamiScene.unity
     guid: 4e0b0ef61a1fe3d4c982e4f24c3839bd
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 086e937cc4ac65343b8f0a820a8afc39
   m_configObjects: {}
