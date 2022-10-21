@@ -5,8 +5,16 @@ using UnityEngine;
 public class JetPack : MonoBehaviour
 {
     Rigidbody2D rb;
-    float speedForceApplied = 75;
+    float speedForceApplied = 3;
     float defaultSpeed;
+    bool floating = false;
+    bool canFloat = true;
+    public GameObject child1;
+    public GameObject child2;
+    public GameObject child3;
+    public GameObject child4;
+    public GameObject child5;
+    public GameObject child6;
 
     // Start is called before the first frame update
     void Start()
@@ -16,37 +24,84 @@ public class JetPack : MonoBehaviour
         TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //Finds the direction the player needs to move
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var mouseDir = mousePos - gameObject.transform.position;
-        
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && canFloat)
         {
-            //Makes gravity 0 while using ability
-            rb.gravityScale = 0;
-            rb.mass = 0.05f;
-            //Applies force towards the mouse
-            mouseDir.x *= .45f;
-            mouseDir.y *= 1.1f;
-            rb.AddForce(mouseDir * speedForceApplied * Time.deltaTime);
-            
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            //Restores gravity
-            rb.gravityScale = 1;
-            rb.mass = .1f;
+            floating = true;
+            Invoke("JetpackJump", 1.3f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .7f);
+
         }
     }
 
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        //Finds the direction the player needs to move
+        //var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //var mouseDir = mousePos - gameObject.transform.position;
+
+
+        if (floating == true)
+        {
+            canFloat = false;
+            ChildGravNone();
+            rb.AddForce(Vector3.up * speedForceApplied);
+            rb.velocity = new Vector2(rb.velocity.x * .95f, rb.velocity.y);
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y *.9f);
+            }
+        }
+        else
+        {
+            ChildGravReset();
+        }
+    }
+
+    void JetpackJump()
+    {
+        // Finds the direction the player needs to move
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var mouseDir = mousePos - gameObject.transform.position;
+        mouseDir.Normalize();
+        floating = false;
+        Invoke("CanJetPack", 1.5f);
+        rb.AddForce(mouseDir * speedForceApplied * 2,ForceMode2D.Impulse);
+    }
     public void Handle_TimeSlowEvent()
     {
         //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
         speedForceApplied = tempSpeed / Time.fixedDeltaTime;
+    }
+
+    public void CanJetPack()
+    {
+        canFloat = true;
+    }
+
+    void ChildGravNone()
+    {
+        rb.gravityScale = 0;
+        child1.GetComponent<Rigidbody2D>().gravityScale = 0;
+        child2.GetComponent<Rigidbody2D>().gravityScale = 0;
+        child3.GetComponent<Rigidbody2D>().gravityScale = 0;
+        child4.GetComponent<Rigidbody2D>().gravityScale = 0;
+        child5.GetComponent<Rigidbody2D>().gravityScale = 0;
+        child6.GetComponent<Rigidbody2D>().gravityScale = 0;
+    }
+
+    void ChildGravReset()
+    {
+        rb.gravityScale = 1;
+        child1.GetComponent<Rigidbody2D>().gravityScale = 1;
+        child2.GetComponent<Rigidbody2D>().gravityScale = 1;
+        child3.GetComponent<Rigidbody2D>().gravityScale = 1;
+        child4.GetComponent<Rigidbody2D>().gravityScale = 1;
+        child5.GetComponent<Rigidbody2D>().gravityScale = 1;
+        child6.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
     public void OnDestroy()
