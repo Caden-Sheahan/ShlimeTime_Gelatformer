@@ -30,7 +30,7 @@ public class JetPack : MonoBehaviour
         {
             floating = true;
             Invoke("JetpackJump", 1.3f);
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .7f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
 
         }
     }
@@ -51,7 +51,7 @@ public class JetPack : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x * .95f, rb.velocity.y);
             if(rb.velocity.y < 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y *.9f);
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y *.85f);
             }
         }
         else
@@ -65,10 +65,12 @@ public class JetPack : MonoBehaviour
         // Finds the direction the player needs to move
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var mouseDir = mousePos - gameObject.transform.position;
-        mouseDir.Normalize();
         floating = false;
         Invoke("CanJetPack", 1.5f);
-        rb.AddForce(mouseDir * speedForceApplied * 2,ForceMode2D.Impulse);
+        mouseDir.z = 0;
+        mouseDir.Normalize();
+
+        rb.AddForce(mouseDir * speedForceApplied, ForceMode2D.Impulse);
     }
     public void Handle_TimeSlowEvent()
     {

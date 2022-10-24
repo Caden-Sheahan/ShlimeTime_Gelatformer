@@ -34,8 +34,9 @@ public class Swing : MonoBehaviour
             distJoint.connectedAnchor = mousePos;
             distJoint.enabled = true;
             lineRender.enabled = true;
+            rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y);
 
-            
+
         }
         else if (Input.GetKeyUp(KeyCode.D) && allowGrapple)
         {
@@ -45,6 +46,15 @@ public class Swing : MonoBehaviour
         if (distJoint.enabled)
         {
             lineRender.SetPosition(1, transform.position);
+        }
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.D) && allowGrapple)
+        {
+            rb.velocity = new Vector2(rb.velocity.x * 1.001f, rb.velocity.y);
         }
     }
 
