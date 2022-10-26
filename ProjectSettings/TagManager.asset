@@ -12,6 +12,7 @@ TagManager:
   - PU2
   - PU3
   - PU4
+  - CAVE
   layers:
   - Default
   - TransparentFX
