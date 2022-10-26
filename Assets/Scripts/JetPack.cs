@@ -76,7 +76,7 @@ public class JetPack : MonoBehaviour
     {
         //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
-        speedForceApplied = tempSpeed / Time.fixedDeltaTime;
+        //speedForceApplied = tempSpeed / Time.fixedDeltaTime;
     }
 
     public void CanJetPack()
