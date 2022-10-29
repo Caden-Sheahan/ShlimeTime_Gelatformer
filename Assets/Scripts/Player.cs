@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     float speedForceApplied = 3.0f;
     float defaultSpeed;
+    bool lift = false;
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
@@ -32,6 +33,11 @@ public class Player : MonoBehaviour
         if (GetComponent<Rigidbody2D>().velocity.x <= -13f || GetComponent<Rigidbody2D>().velocity.y <= -13f)
         {
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
+        }
+
+        if(lift)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 7);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,6 +68,19 @@ public class Player : MonoBehaviour
         {
             //Play SplatSound1
             FindObjectOfType<AudioManager>().Play("SlimeSplat1");
+        }
+
+        if(collision.gameObject.tag == "CrystalLift")
+        {
+            lift = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "CrystalLift")
+        {
+            lift = false;
         }
     }
 
