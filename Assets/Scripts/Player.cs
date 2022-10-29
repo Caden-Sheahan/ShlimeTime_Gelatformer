@@ -41,7 +41,9 @@ public class Player : MonoBehaviour
             //Pushed player away from the explosion of the first ability
             var force = transform.position - collision.transform.position;
             force.Normalize();
-            GetComponent<Rigidbody2D>().AddForce(force * speedForceApplied, ForceMode2D.Impulse);
+            force *= speedForceApplied;
+            //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 10, GetComponent<Rigidbody2D>().velocity.y + force.y* 10);
         }
 
         if (collision.gameObject.tag == "RespawnPoint")
