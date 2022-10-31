@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class JetPack : MonoBehaviour
 {
@@ -16,12 +17,18 @@ public class JetPack : MonoBehaviour
     public GameObject child5;
     public GameObject child6;
 
+    public GameObject slimeBod;
+    public GameObject slimeEyes;
+
     // Start is called before the first frame update
     void Start()
     {
         defaultSpeed = speedForceApplied;
         rb = GetComponent<Rigidbody2D>();
         TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
+
+        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
+        slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     private void Update()
@@ -31,6 +38,9 @@ public class JetPack : MonoBehaviour
             floating = true;
             Invoke("JetpackJump", 1.3f);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+
+            slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
+            slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
 
         }
     }

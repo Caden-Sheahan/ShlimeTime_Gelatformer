@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class TimeSlow : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class TimeSlow : MonoBehaviour
     bool canSlowDown = true;
     public static Action slowTimeEvent;
     public static Action jetpackSlowTimeEvent;
+
+    public GameObject slimeBod;
+    public GameObject slimeEyes;
     // Start is called before the first frame update
     void Start()
     {
-        
+        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.yellow;
+        slimeEyes.GetComponent<SpriteRenderer>().color = Color.yellow;
     }
 
     private void Update()
@@ -25,6 +30,9 @@ public class TimeSlow : MonoBehaviour
                 //Starts the process of slowing down time
                 canSlowDown = false;
                 TimeSlowDown();
+
+                slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.yellow;
+                slimeEyes.GetComponent<SpriteRenderer>().color = Color.yellow;
             } 
         }
     }
