@@ -6,8 +6,9 @@ public class Player : MonoBehaviour
 {
     Vector2 resPos;
     public Rigidbody2D rb;
-    float speedForceApplied = 150;
+    float speedForceApplied = 3.0f;
     float defaultSpeed;
+    bool lift = false;
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
@@ -33,6 +34,11 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
         }
+
+        if(lift)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 7);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,7 +47,9 @@ public class Player : MonoBehaviour
             //Pushed player away from the explosion of the first ability
             var force = transform.position - collision.transform.position;
             force.Normalize();
-            GetComponent<Rigidbody2D>().AddForce(force * speedForceApplied);
+            force *= speedForceApplied;
+            //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 10, GetComponent<Rigidbody2D>().velocity.y + force.y* 10);
         }
 
         if (collision.gameObject.tag == "RespawnPoint")
@@ -60,6 +68,19 @@ public class Player : MonoBehaviour
         {
             //Play SplatSound1
             FindObjectOfType<AudioManager>().Play("SlimeSplat1");
+        }
+
+        if(collision.gameObject.tag == "CrystalLift")
+        {
+            lift = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "CrystalLift")
+        {
+            lift = false;
         }
     }
 
@@ -87,7 +108,7 @@ public class Player : MonoBehaviour
     {
         //Adjusts force relative to time
         float tempSpeed = (float)(defaultSpeed * .02);
-        speedForceApplied = tempSpeed / Time.fixedDeltaTime;
+        //speedForceApplied = tempSpeed / Time.fixedDeltaTime;
 
         
     }

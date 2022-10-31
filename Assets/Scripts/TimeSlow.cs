@@ -38,8 +38,10 @@ public class TimeSlow : MonoBehaviour
                 //Slows down time until it reaches 1/5 speed
                 slowTimeEvent?.Invoke();
                 jetpackSlowTimeEvent?.Invoke();
+
                 Time.timeScale *= .995f;
-                Time.fixedDeltaTime *= Time.timeScale;
+                Time.fixedDeltaTime = 0.02f *Time.timeScale;
+
             }
             else
             {
