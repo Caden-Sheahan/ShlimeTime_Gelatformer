@@ -82,6 +82,6 @@ public class PlayerMainMenu : MonoBehaviour
         {
             playerMove = 0;
         }
-        Debug.Log(playerMove);
+        //Debug.Log(playerMove);
     }
 }
