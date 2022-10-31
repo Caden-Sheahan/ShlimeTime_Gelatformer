@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Shoot : MonoBehaviour
 {
     private Vector3 target;
     public GameObject player;
     public GameObject rocketPrefab;
+    public GameObject slimeBod;
+    public GameObject slimeEyes;
 
     public float bulletSpeed = 15f;
     bool shootCooldown = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.green;
+        slimeEyes.GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     // Update is called once per frame
@@ -37,6 +41,10 @@ public class Shoot : MonoBehaviour
             direction.Normalize();
             //Activates the fire rocket code while providing direction and rotation
             fireRocket(direction, rotationZ);
+
+            //slimeBod.GetComponent<SpriteShapeRenderer>().color = new Color(138,255,69,255);
+            slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.green;
+            slimeEyes.GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 

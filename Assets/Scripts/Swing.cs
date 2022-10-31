@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Swing : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Swing : MonoBehaviour
     public DistanceJoint2D distJoint;
     public Rigidbody2D rb;
     bool allowGrapple = true;
+    public GameObject slimeBod;
+    public GameObject slimeEyes;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,9 @@ public class Swing : MonoBehaviour
         lineRender = GetComponent<LineRenderer>();
         distJoint = GetComponent<DistanceJoint2D>();
         distJoint.enabled = false;
+
+        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.blue;
+        slimeEyes.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 
     // Update is called once per frame
@@ -36,6 +42,8 @@ public class Swing : MonoBehaviour
             lineRender.enabled = true;
             rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y);
 
+            slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.blue;
+            slimeEyes.GetComponent<SpriteRenderer>().color = Color.blue;
 
         }
         else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
