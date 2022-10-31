@@ -26,7 +26,7 @@ public class JetPack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S) && canFloat)
+        if (Input.GetKeyDown(KeyCode.A) && canFloat)
         {
             floating = true;
             Invoke("JetpackJump", 1.3f);
