@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AbiltiesEnabler : MonoBehaviour
 {
     public GameObject mainCam;
+    public GameObject[] controlsText = new GameObject[4];
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +27,22 @@ public class AbiltiesEnabler : MonoBehaviour
         if (collision.gameObject.tag == "PU1")
         {
             mainCam.GetComponent<Shoot>().enabled = true;
+            controlsText[0].SetActive(true);
         }
         if (collision.gameObject.tag == "PU2")
         {
             gameObject.GetComponent<TimeSlow>().enabled = true;
+            controlsText[1].SetActive(true);
         }
         if (collision.gameObject.tag == "PU3")
         {
             gameObject.GetComponent<JetPack>().enabled = true;
+            controlsText[2].SetActive(true);
         }
         if (collision.gameObject.tag == "PU4")
         {
             gameObject.GetComponent<Swing>().enabled = true;
+            controlsText[3].SetActive(true);
         }
     }
 }
