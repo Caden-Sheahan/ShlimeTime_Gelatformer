@@ -18,7 +18,7 @@ public class TimeSlow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if(canSlowDown)
             {

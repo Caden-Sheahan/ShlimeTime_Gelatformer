@@ -25,7 +25,7 @@ public class Swing : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.D) && allowGrapple)
+        if (Input.GetKeyDown(KeyCode.W) && allowGrapple)
         {
             //Shoots the grapple
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -38,7 +38,7 @@ public class Swing : MonoBehaviour
 
 
         }
-        else if (Input.GetKeyUp(KeyCode.D) && allowGrapple)
+        else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
         {
             Recall();
             
@@ -52,7 +52,7 @@ public class Swing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D) && allowGrapple)
+        if (Input.GetKey(KeyCode.W) && allowGrapple)
         {
             rb.velocity = new Vector2(rb.velocity.x * 1.001f, rb.velocity.y);
         }
