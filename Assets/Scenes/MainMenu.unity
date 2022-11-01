@@ -773,6 +773,7 @@ MonoBehaviour:
   child4: {fileID: 2114157796}
   child5: {fileID: 1037457545}
   child6: {fileID: 1548546053}
+  playerTransform: {fileID: 0}
 --- !u!58 &297030020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6201,7 +6202,6 @@ GameObject:
   - component: {fileID: 1778572640}
   - component: {fileID: 1778572639}
   - component: {fileID: 1778572638}
-  - component: {fileID: 1778572641}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6275,23 +6275,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1778572641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778572637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8272f0e85019a6c4699fd23b97b1164a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 297030009}
-  rocketPrefab: {fileID: 1937376848}
-  slimeBod: {fileID: 0}
-  slimeEyes: {fileID: 0}
-  bulletSpeed: 15
 --- !u!1 &1849215116
 GameObject:
   m_ObjectHideFlags: 0
