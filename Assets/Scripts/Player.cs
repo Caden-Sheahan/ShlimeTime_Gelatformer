@@ -57,10 +57,7 @@ public class Player : MonoBehaviour
         {
             //Assigns respawn position
             resPos = collision.transform.position;
-            if (resPos == playerTransform)
-            {
-                FindObjectOfType<AudioManager>().Play("Checkpoints");
-            }
+            FindObjectOfType<AudioManager>().Play("Checkpoints");
             
         }
 
