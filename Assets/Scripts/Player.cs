@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public GameObject child4;
     public GameObject child5;
     public GameObject child6;
+    public Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +57,11 @@ public class Player : MonoBehaviour
         {
             //Assigns respawn position
             resPos = collision.transform.position;
+            if (resPos == playerTransform)
+            {
+                FindObjectOfType<AudioManager>().Play("Checkpoints");
+            }
+            
         }
 
         if (collision.CompareTag("Obstacles"))

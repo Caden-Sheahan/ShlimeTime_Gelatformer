@@ -28,21 +28,25 @@ public class AbiltiesEnabler : MonoBehaviour
         {
             mainCam.GetComponent<Shoot>().enabled = true;
             controlsText[0].SetActive(true);
+            FindObjectOfType<AudioManager>().Play("PowerGain");
         }
         if (collision.gameObject.tag == "PU2")
         {
             gameObject.GetComponent<TimeSlow>().enabled = true;
             controlsText[1].SetActive(true);
+            FindObjectOfType<AudioManager>().Play("PowerGain");
         }
         if (collision.gameObject.tag == "PU3")
         {
             gameObject.GetComponent<JetPack>().enabled = true;
             controlsText[2].SetActive(true);
+            FindObjectOfType<AudioManager>().Play("PowerGain");
         }
         if (collision.gameObject.tag == "PU4")
         {
             gameObject.GetComponent<Swing>().enabled = true;
             controlsText[3].SetActive(true);
+            FindObjectOfType<AudioManager>().Play("PowerGain");
         }
     }
 }
