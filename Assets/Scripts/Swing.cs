@@ -23,8 +23,8 @@ public class Swing : MonoBehaviour
         distJoint = GetComponent<DistanceJoint2D>();
         distJoint.enabled = false;
 
-        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.blue;
-        slimeEyes.GetComponent<SpriteRenderer>().color = Color.blue;
+        slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.cyan;
+        slimeEyes.GetComponent<SpriteRenderer>().color = Color.cyan;
     }
 
     // Update is called once per frame
@@ -42,8 +42,8 @@ public class Swing : MonoBehaviour
             lineRender.enabled = true;
             rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y);
 
-            slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.blue;
-            slimeEyes.GetComponent<SpriteRenderer>().color = Color.blue;
+            slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.cyan;
+            slimeEyes.GetComponent<SpriteRenderer>().color = Color.cyan;
 
         }
         else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
