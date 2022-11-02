@@ -14,6 +14,10 @@ TagManager:
   - PU4
   - CAVE
   - CrystalLift
+  - CASTLE
+  - CRYSTAL
+  - JUNGLE
+  - HUB
   layers:
   - Default
   - TransparentFX
