@@ -15,13 +15,26 @@ public class Player : MonoBehaviour
     public GameObject child4;
     public GameObject child5;
     public GameObject child6;
+    Vector2 childLoc1;
+    Vector2 childLoc2;
+    Vector2 childLoc3;
+    Vector2 childLoc4;
+    Vector2 childLoc5;
+    Vector2 childLoc6;
     public Transform playerTransform;
+    bool canPushed = true;
     // Start is called before the first frame update
     void Start()
     {
         defaultSpeed = speedForceApplied;
         rb.GetComponent<Rigidbody2D>();
         TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
+        childLoc1 = child1.transform.localPosition;
+        childLoc2 = child2.transform.localPosition;
+        childLoc3 = child3.transform.localPosition;
+        childLoc4 = child4.transform.localPosition;
+        childLoc5 = child5.transform.localPosition;
+        childLoc6 = child6.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -45,12 +58,20 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Explode")
         {
-            //Pushed player away from the explosion of the first ability
-            var force = transform.position - collision.transform.position;
-            force.Normalize();
-            force *= speedForceApplied;
-            //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 10, GetComponent<Rigidbody2D>().velocity.y + force.y* 10);
+            if(canPushed)
+            {
+                canPushed = false;
+                Invoke("allowPush", .2f);
+                //Pushed player away from the explosion of the first ability
+                var force = transform.position - collision.transform.position;
+                force.Normalize();
+                force *= speedForceApplied;
+                //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 20, GetComponent<Rigidbody2D>().velocity.y + force.y* 20);
+
+            }
+            
+            
         }
 
         if (collision.gameObject.tag == "RespawnPoint")
@@ -103,6 +124,12 @@ public class Player : MonoBehaviour
             child4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child5.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child6.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            child1.transform.localPosition = childLoc1;
+            child2.transform.localPosition = childLoc2;
+            child3.transform.localPosition = childLoc3;
+            child4.transform.localPosition = childLoc4;
+            child5.transform.localPosition = childLoc5;
+            child6.transform.localPosition = childLoc6;
         }
         
     }
@@ -118,6 +145,11 @@ public class Player : MonoBehaviour
     public void OnDestroy()
     {
         TimeSlow.slowTimeEvent -= Handle_TimeSlowEvent;
+    }
+
+    public void allowPush()
+    {
+        canPushed = true;
     }
 
     //Ignore this

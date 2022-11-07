@@ -37,7 +37,7 @@ public class JetPack : MonoBehaviour
         {
             floating = true;
             Invoke("JetpackJump", 1.3f);
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .65f);
 
             slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
             slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
