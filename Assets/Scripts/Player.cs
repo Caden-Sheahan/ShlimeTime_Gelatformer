@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
             //Assigns respawn position
             resPos = collision.transform.position;
             FindObjectOfType<AudioManager>().Play("Checkpoints");
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             
         }
 
