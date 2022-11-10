@@ -25,7 +25,7 @@ public class JetPack : MonoBehaviour
     {
         defaultSpeed = speedForceApplied;
         rb = GetComponent<Rigidbody2D>();
-        //TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
+        TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
 
         slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
         slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
@@ -82,25 +82,13 @@ public class JetPack : MonoBehaviour
 
         rb.AddForce(mouseDir * speedForceApplied, ForceMode2D.Impulse);
     }
-
-    /*
     public void Handle_TimeSlowEvent()
     {
         //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
         //speedForceApplied = tempSpeed / Time.fixedDeltaTime;
-    }*/
-    
-
-    public void EndJetPackEarly()
-    {
-        CanJetPack();
-        ChildGravReset();
-        floating = false;
-        CancelInvoke("JetpackJump");
-
-
     }
+
     public void CanJetPack()
     {
         canFloat = true;
@@ -130,6 +118,6 @@ public class JetPack : MonoBehaviour
 
     public void OnDestroy()
     {
-        //TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
+        TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
     }
 }

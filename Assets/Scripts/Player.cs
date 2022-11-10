@@ -131,8 +131,6 @@ public class Player : MonoBehaviour
             child4.transform.localPosition = childLoc4;
             child5.transform.localPosition = childLoc5;
             child6.transform.localPosition = childLoc6;
-            JetPack j = FindObjectOfType<JetPack>();
-            j.EndJetPackEarly();
         }
         
     }

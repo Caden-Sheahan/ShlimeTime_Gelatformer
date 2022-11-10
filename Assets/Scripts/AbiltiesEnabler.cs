@@ -14,9 +14,6 @@ public class AbiltiesEnabler : MonoBehaviour
         gameObject.GetComponent<TimeSlow>().enabled = false;
         gameObject.GetComponent<JetPack>().enabled = false;
         gameObject.GetComponent<Swing>().enabled = false;
-
-        Time.timeScale = 1;
-        Time.fixedDeltaTime = 0.02f;
     }
 
     // Update is called once per frame
