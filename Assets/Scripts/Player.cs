@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
         childLoc4 = child4.transform.localPosition;
         childLoc5 = child5.transform.localPosition;
         childLoc6 = child6.transform.localPosition;
+
+        transform.position = JsonManager.instance.GSD.resetPos;
     }
 
     // Update is called once per frame
