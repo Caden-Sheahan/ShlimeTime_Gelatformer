@@ -19,9 +19,10 @@ public class MainMenuManager : MonoBehaviour
         GameController.isTimeOn = true;
     }
 
+    // ADD JSON ON THIS ONE
     public void NewGame()
     {
-
+        SceneManager.LoadScene("Map");
     }
 
     public void ContinueGame()
