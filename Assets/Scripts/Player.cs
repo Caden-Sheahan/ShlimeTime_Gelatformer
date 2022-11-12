@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
         childLoc4 = child4.transform.localPosition;
         childLoc5 = child5.transform.localPosition;
         childLoc6 = child6.transform.localPosition;
+
+        transform.position = JsonManager.instance.GSD.resetPos;
     }
 
     // Update is called once per frame
@@ -80,7 +82,10 @@ public class Player : MonoBehaviour
             resPos = collision.transform.position;
             FindObjectOfType<AudioManager>().Play("Checkpoints");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            
+
+            JsonManager.instance.SavePos(resPos);
+
+
         }
 
         if (collision.CompareTag("Obstacles"))
@@ -131,6 +136,8 @@ public class Player : MonoBehaviour
             child4.transform.localPosition = childLoc4;
             child5.transform.localPosition = childLoc5;
             child6.transform.localPosition = childLoc6;
+            JetPack j = FindObjectOfType<JetPack>();
+            j.EndJetPackEarly();
         }
         
     }
