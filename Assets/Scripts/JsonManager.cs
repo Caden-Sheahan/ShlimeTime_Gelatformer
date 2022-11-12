@@ -8,10 +8,11 @@ public class JsonManager : MonoBehaviour
 {
     public static JsonManager instance;
     public GameSaveData GSD;
+    private string path;
     // Start is called before the first frame update
     void Start()
     {
-        if (instance != null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -19,13 +20,41 @@ public class JsonManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        path = Application.isEditor ? Application.dataPath : Application.persistentDataPath; //checks to see if we're in editor, if so use datapath instead of persistent datapath
+        path = path + "/SaveData/"; //append /SaveData/ to said path
+        if (!Application.isEditor && !Directory.Exists(path)) //check if we're in a build, check if the directory exists, if not
+        {
+            Directory.CreateDirectory(path); //create it
+        }
         Load();
         DontDestroyOnLoad(gameObject);
     }
 
-    public void savePos(Vector2 tempPos)
+    public void SavePos(Vector2 tempPos)
     {
         GSD.resetPos = tempPos;
+        saveText();
+    }
+
+    public void SavePush(bool tempBool)
+    {
+        GSD.hasPush = tempBool;
+        saveText();
+    }
+    
+    public void SaveTime(bool tempBool)
+    {
+        GSD.hasSlow = tempBool;
+        saveText();
+    }
+    public void SaveJetPack(bool tempBool)
+    {
+        GSD.hasJetPack = tempBool;
+        saveText();
+    }
+    public void SaveSwing(bool tempBool)
+    {
+        GSD.hasSwing = tempBool;
         saveText();
     }
 
@@ -35,31 +64,26 @@ public class JsonManager : MonoBehaviour
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
         });
-        File.WriteAllText(Application.persistentDataPath + "/SaveData/Data.json", convertedJson);
+        File.WriteAllText(path + "Data.json", convertedJson);
     }
 
     public void Load()
     {
-        if (File.Exists(Application.dataPath + "/SaveDate/Data.json"))
+        if (File.Exists(path + "Data.json"))
         {
-            var json = File.ReadAllText(Application.persistentDataPath + "/SaveData/Data.json");
+            var json = File.ReadAllText(path + "Data.json");
             GSD = JsonConvert.DeserializeObject<GameSaveData>(json);
         }
         else
         {
             saveText();
-            /*
-            var newGSD = new GameSaveData();
-            var convertedJson = JsonConvert.SerializeObject(newGSD);
-            //File.WriteAllText(Application.persistentDataPath + "/SaveData/Data.json", convertedJson);
-            //GSD = newGSD;
-            */
+
         }
     }
 }
 
 [System.Serializable]
-public class GameSaveData 
+public class GameSaveData
 {
     public Vector2 resetPos;
     public bool hasPush;

@@ -82,7 +82,10 @@ public class Player : MonoBehaviour
             resPos = collision.transform.position;
             FindObjectOfType<AudioManager>().Play("Checkpoints");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            
+
+            JsonManager.instance.SavePos(resPos);
+
+
         }
 
         if (collision.CompareTag("Obstacles"))
