@@ -22,6 +22,11 @@ public class MainMenuManager : MonoBehaviour
     // ADD JSON ON THIS ONE
     public void NewGame()
     {
+        JsonManager.instance.SavePos(new Vector2(-31,9.1f));
+        JsonManager.instance.SavePush(false);
+        JsonManager.instance.SaveTime(false);
+        JsonManager.instance.SaveJetPack(false);
+        JsonManager.instance.SaveSwing(false);
         SceneManager.LoadScene("Map");
     }
 
