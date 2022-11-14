@@ -95,7 +95,9 @@ public class JetPack : MonoBehaviour
     public void EndJetPackEarly()
     {
         CanJetPack();
+
         ChildGravReset();
+
         floating = false;
         CancelInvoke("JetpackJump");
 
@@ -118,6 +120,10 @@ public class JetPack : MonoBehaviour
 
     void ChildGravReset()
     {
+        if(rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
         rb.gravityScale = 1;
         child1.GetComponent<Rigidbody2D>().gravityScale = 1;
         child2.GetComponent<Rigidbody2D>().gravityScale = 1;

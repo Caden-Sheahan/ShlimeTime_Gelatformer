@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     Vector2 childLoc4;
     Vector2 childLoc5;
     Vector2 childLoc6;
-    public Transform playerTransform;
+    //public Transform playerTransform;
     bool canPushed = true;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,14 @@ public class Player : MonoBehaviour
         childLoc6 = child6.transform.localPosition;
 
         transform.position = JsonManager.instance.GSD.resetPos;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))    
+        {
+            Respawn();
+        }
     }
 
     // Update is called once per frame
