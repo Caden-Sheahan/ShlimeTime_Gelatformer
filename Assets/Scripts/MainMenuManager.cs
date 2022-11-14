@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
     // ADD JSON ON THIS ONE
     public void NewGame()
     {
-        JsonManager.instance.SavePos(new Vector2(-31,9.1f));
+        JsonManager.instance.SavePos(new Vector2(-13, 110));
         JsonManager.instance.SavePush(false);
         JsonManager.instance.SaveTime(false);
         JsonManager.instance.SaveJetPack(false);
