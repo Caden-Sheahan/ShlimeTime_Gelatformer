@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
-    public Image tutorialImage;
-    public GameObject timeToggleButton;
-    public GameObject PauseUI;
+    public GameObject HowToPlayMenu;
+    public GameObject TimeMenu;
+    public GameObject ControlMenu;
+    public GameObject CreditsMenu;
     public bool isInfoActive;
-    public bool isAccessActive;
+    public bool creditsActive;
 
     void Start()
     {
-        tutorialImage.enabled = false;
         isInfoActive = true;
-        isAccessActive = true;
+        creditsActive = true;
         GameController.isTimeOn = true;
     }
 
@@ -42,42 +43,45 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void ResumeGame()
-    {
-        PauseUI.SetActive(false);
-        Time.timeScale = 1;
-    }
-
     public void HowToGame()
     {
-        if(isInfoActive == false) 
+        if(!isInfoActive) 
         {
-            tutorialImage.enabled = false;
-            timeToggleButton.SetActive(false);
+            HowToPlayMenu.SetActive(false);
             isInfoActive = true;
         }
-
-        else if (isInfoActive == true)
+        else
         {
-            tutorialImage.enabled = true;
-            timeToggleButton.SetActive(true);
+            HowToPlayMenu.SetActive(true);
             isInfoActive = false;
         }
     }
 
-    //public void AccessAccessibility()
-    //{
-    //    if (!isAccessActive)
-    //    {
-    //        timeToggleButton.SetActive(false);
-    //        isAccessActive = true;
-    //    }
-    //    else
-    //    {
-    //        timeToggleButton.SetActive(true);
-    //        isAccessActive = false;
-    //    }
-    //}
+    public void ViewCredits()
+    {
+        if (!creditsActive)
+        {
+            CreditsMenu.SetActive(false);
+            creditsActive = true;
+        }
+        else
+        {
+            CreditsMenu.SetActive(true);
+            creditsActive = false;
+        }
+    }    
+
+    public void NextPage()
+    {
+        ControlMenu.SetActive(false);
+        TimeMenu.SetActive(true);
+    }
+
+    public void PreviousPage()
+    {
+        ControlMenu.SetActive(true);
+        TimeMenu.SetActive(false);
+    }
 
     public void TimeToggle(bool toggleTime)
     {
