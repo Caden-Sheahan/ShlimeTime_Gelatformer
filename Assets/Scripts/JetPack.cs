@@ -25,7 +25,7 @@ public class JetPack : MonoBehaviour
     {
         defaultSpeed = speedForceApplied;
         rb = GetComponent<Rigidbody2D>();
-        TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
+        //TimeSlow.jetpackSlowTimeEvent += Handle_TimeSlowEvent;
 
         slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
         slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
@@ -37,7 +37,7 @@ public class JetPack : MonoBehaviour
         {
             floating = true;
             Invoke("JetpackJump", 1.3f);
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .65f);
 
             slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.red;
             slimeEyes.GetComponent<SpriteRenderer>().color = Color.red;
@@ -82,13 +82,26 @@ public class JetPack : MonoBehaviour
 
         rb.AddForce(mouseDir * speedForceApplied, ForceMode2D.Impulse);
     }
+
+    /*
     public void Handle_TimeSlowEvent()
     {
         //Adjusts force applied relative to speed
         float tempSpeed = (float)(defaultSpeed * .02);
         //speedForceApplied = tempSpeed / Time.fixedDeltaTime;
-    }
+    }*/
+    
 
+    public void EndJetPackEarly()
+    {
+        CanJetPack();
+
+        ChildGravReset();
+
+        floating = false;
+        CancelInvoke("JetpackJump");
+
+    }
     public void CanJetPack()
     {
         canFloat = true;
@@ -107,6 +120,10 @@ public class JetPack : MonoBehaviour
 
     void ChildGravReset()
     {
+        if(rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
         rb.gravityScale = 1;
         child1.GetComponent<Rigidbody2D>().gravityScale = 1;
         child2.GetComponent<Rigidbody2D>().gravityScale = 1;
@@ -118,6 +135,6 @@ public class JetPack : MonoBehaviour
 
     public void OnDestroy()
     {
-        TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
+        //TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
     }
 }

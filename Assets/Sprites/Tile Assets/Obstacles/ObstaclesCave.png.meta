@@ -1,0 +1,632 @@
+fileFormatVersion: 2
+guid: 9def44d52f1534b438944038469addab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ObstaclesCave_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: -32, y: -16}
+        - {x: -32, y: 32}
+        - {x: 16, y: 32}
+        - {x: 8, y: 4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0105a7c235a0d6a499bcaaccc87b9061
+      internalID: 1597090602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 17, y: -16}
+        - {x: -8, y: 4}
+        - {x: -16, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f3b345ed83a1046803e7dfae6916fc
+      internalID: -1165586578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d031b8231a7e20444ad4b1d37af19de1
+      internalID: -662764677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -32}
+        - {x: -16, y: 16}
+        - {x: 32, y: 16}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7cb05a91cbff34eb9d0b09ed0afe1d
+      internalID: -1287979025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad317fb54bded5644a16514d903d3f87
+      internalID: 1610518091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 4}
+        - {x: -2, y: 20}
+        - {x: 4, y: 0}
+        - {x: 10, y: 28}
+        - {x: 32, y: -12}
+        - {x: 32, y: -32}
+        - {x: -32, y: -32}
+        - {x: -32, y: 16}
+        - {x: -22, y: 32}
+        - {x: -16, y: 4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07511610fffdf542981b21426732e1b
+      internalID: 551504271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -20, y: -2}
+        - {x: 0, y: 6}
+        - {x: -28, y: 10}
+        - {x: 12, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
+        - {x: -16, y: -32}
+        - {x: -32, y: -22}
+        - {x: -4, y: -16}
+        - {x: -4, y: -9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415c75ea8090cdf4a89b20fb46fe901f
+      internalID: -102709382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: 12}
+        - {x: -32, y: 32}
+        - {x: -32, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -16}
+        - {x: 22, y: -32}
+        - {x: 16, y: -4}
+        - {x: 8, y: -4}
+        - {x: 2, y: -20}
+        - {x: -6, y: 0}
+        - {x: -10, y: -28}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65296b5470002f84ea5c98f4e7fd37e2
+      internalID: -190902703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -12, y: -32}
+        - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 16, y: 32}
+        - {x: 32, y: 22}
+        - {x: 4, y: 16}
+        - {x: 4, y: 8}
+        - {x: 20, y: 2}
+        - {x: 0, y: -4}
+        - {x: 28, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd8aede1c3d47643a8bd5d887788947
+      internalID: 1280722146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 32, y: -32}
+        - {x: -32, y: -32}
+        - {x: -32, y: -12}
+        - {x: -16, y: 6}
+        - {x: -28, y: 20}
+        - {x: -4, y: 20}
+        - {x: 16, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: 32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fd4a07457f77549b8a540041876e5a
+      internalID: 140357066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 12, y: -32}
+        - {x: -6, y: -16}
+        - {x: -20, y: -28}
+        - {x: -20, y: -4}
+        - {x: -32, y: 16}
+        - {x: -32, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9644c0a5ad05804468c9c82d7cba58ef
+      internalID: -710263482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: -20}
+        - {x: -16, y: -32}
+        - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: 12}
+        - {x: 16, y: -6}
+        - {x: 28, y: -20}
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa69ad25ac28414dbd557a7ad183511
+      internalID: -985243832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: -12, y: 32}
+        - {x: 6, y: 16}
+        - {x: 20, y: 28}
+        - {x: 20, y: 4}
+        - {x: 32, y: -17}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910fdb460b8fcd24b96e44503789f41b
+      internalID: -620565615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -18}
+        - {x: 0, y: -12}
+        - {x: -12, y: 16}
+        - {x: 8, y: 4}
+        - {x: 22, y: 16}
+        - {x: 32, y: -16}
+        - {x: 32, y: -32}
+        - {x: 8, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69307637feffda8489218bfcc884c9ab
+      internalID: 757538925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -12}
+        - {x: 0, y: 12}
+        - {x: -16, y: 22}
+        - {x: 16, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: 8}
+        - {x: 18, y: -16}
+        - {x: 8, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af7ac431f0a07c4c9ea3d62f4145e7a
+      internalID: -1256836973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 8}
+        - {x: 12, y: -16}
+        - {x: -8, y: -4}
+        - {x: -22, y: -16}
+        - {x: -32, y: 16}
+        - {x: -32, y: 32}
+        - {x: -8, y: 32}
+        - {x: 16, y: 18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172c9dcba364cb547a11bdf3defddfcc
+      internalID: -845810783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaclesCave_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 16, y: -22}
+        - {x: -16, y: -32}
+        - {x: -32, y: -32}
+        - {x: -32, y: -8}
+        - {x: -18, y: 16}
+        - {x: -8, y: 0}
+        - {x: 16, y: 12}
+        - {x: 0, y: -12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9fed31c4f7a154ba948372ed04eaa5
+      internalID: 816560906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ObstaclesCave_7: -190902703
+      ObstaclesCave_6: -102709382
+      ObstaclesCave_10: -710263482
+      ObstaclesCave_2: -662764677
+      ObstaclesCave_13: 757538925
+      ObstaclesCave_5: 551504271
+      ObstaclesCave_4: 1610518091
+      ObstaclesCave_16: 816560906
+      ObstaclesCave_11: -985243832
+      ObstaclesCave_14: -1256836973
+      ObstaclesCave_0: 1597090602
+      ObstaclesCave_3: -1287979025
+      ObstaclesCave_9: 140357066
+      ObstaclesCave_8: 1280722146
+      ObstaclesCave_12: -620565615
+      ObstaclesCave_15: -845810783
+      ObstaclesCave_1: -1165586578
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

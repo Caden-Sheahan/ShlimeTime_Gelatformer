@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour
         //Creates a rotation that is facing towards the mouse
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         //Rotates Z rotation of the player towards the mouse
-        player.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+        player.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + 90);
         
         if(Input.GetKeyDown(KeyCode.D))
         {
@@ -59,7 +59,7 @@ public class Shoot : MonoBehaviour
             //Sets rocket position to player position
             r.transform.position = player.transform.position;
             //Rotates the rocket towards the mouse
-            r.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+            r.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90);
             //Sends the rocket flying
             r.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         }
