@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
         }  
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseMenu();
+            PauseGame();
             //Application.Quit();
         }
 
@@ -36,12 +36,18 @@ public class GameController : MonoBehaviour
     /// Time.timeScale = 1;
     /// Time.fixedDeltaTime = 0.02f;
     /// </summary>
-    public void PauseMenu()
+    public void PauseGame()
     {
         PauseUI.SetActive(true);
         Time.timeScale = 0;
     }
-    
+
+    public void ResumeGame()
+    {
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     //warp to hub code:
     //private Vector2 ReturnToHub = new Vector2(269, 9.5f);
     //if (Input.GetKeyDown(KeyCode.Tab))
