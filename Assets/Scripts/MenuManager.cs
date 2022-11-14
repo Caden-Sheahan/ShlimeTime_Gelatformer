@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public Image tutorialImage;
     public GameObject timeToggleButton;
+    public GameObject PauseUI;
     public bool isInfoActive;
     public bool isAccessActive;
 
@@ -20,7 +21,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     // ADD JSON ON THIS ONE
-    public void NewGame()
+    public void NewSave()
     {
         JsonManager.instance.SavePos(new Vector2(-13, 110));
         JsonManager.instance.SavePush(false);
@@ -30,7 +31,7 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Map");
     }
 
-    public void ContinueGame()
+    public void ContinueSave()
     {
         SceneManager.LoadScene("Map");
     }
@@ -39,6 +40,12 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("Game Hath Quit");
         Application.Quit();
+    }
+
+    public void ResumeGame()
+    {
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void HowToGame()
