@@ -29,11 +29,18 @@ public class TimeSlow : MonoBehaviour
             {
                 //Starts the process of slowing down time
                 canSlowDown = false;
-                TimeSlowDown();
+                speedTime = false;
+                slowTime = true;
 
                 slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.yellow;
                 slimeEyes.GetComponent<SpriteRenderer>().color = Color.yellow;
             } 
+            else if(!canSlowDown)
+            {
+                canSlowDown = true;
+                slowTime = false;
+                speedTime = true;
+            }
         }
     }
     // Update is called once per frame
@@ -41,13 +48,13 @@ public class TimeSlow : MonoBehaviour
     {
         if (slowTime)
         {
-            if(Time.timeScale >= 0.2f)
+            if(Time.timeScale >= 0.3f)
             {
                 //Slows down time until it reaches 1/5 speed
                 slowTimeEvent?.Invoke();
                 jetpackSlowTimeEvent?.Invoke();
 
-                Time.timeScale *= .995f;
+                Time.timeScale *= .9925f;
                 Time.fixedDeltaTime = 0.02f *Time.timeScale;
 
             }
@@ -55,7 +62,7 @@ public class TimeSlow : MonoBehaviour
             {
                 //Time has reached 1/5 speed
                 slowTime = false;
-                Invoke("TimeSpeedUp", 0.5f);
+                //Invoke("TimeSpeedUp", 0.5f);
             }
         }
 
@@ -91,6 +98,6 @@ public class TimeSlow : MonoBehaviour
     void TimeSpeedUp()
     {
         //Starts the speed up of time
-        speedTime = true;
+        //speedTime = true;
     }
 }

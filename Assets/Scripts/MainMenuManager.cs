@@ -7,15 +7,25 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     public Image tutorialImage;
+    public GameObject timeToggleButton;
     public bool isInfoActive;
+    public bool isAccessActive;
 
     void Start()
     {
         tutorialImage.enabled = false;
         isInfoActive = true;
+        isAccessActive = true;
+        GameController.isTimeOn = true;
     }
 
-    public void PlayGame()
+    // ADD JSON ON THIS ONE
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    public void ContinueGame()
     {
         SceneManager.LoadScene("Map");
     }
@@ -31,13 +41,34 @@ public class MainMenuManager : MonoBehaviour
         if(isInfoActive == false) 
         {
             tutorialImage.enabled = false;
+            timeToggleButton.SetActive(false);
             isInfoActive = true;
         }
 
         else if (isInfoActive == true)
         {
             tutorialImage.enabled = true;
+            timeToggleButton.SetActive(true);
             isInfoActive = false;
         }
+    }
+
+    //public void AccessAccessibility()
+    //{
+    //    if (!isAccessActive)
+    //    {
+    //        timeToggleButton.SetActive(false);
+    //        isAccessActive = true;
+    //    }
+    //    else
+    //    {
+    //        timeToggleButton.SetActive(true);
+    //        isAccessActive = false;
+    //    }
+    //}
+
+    public void TimeToggle(bool toggleTime)
+    {
+        GameController.isTimeOn = toggleTime;
     }
 }
