@@ -60,6 +60,8 @@ public class Shoot : MonoBehaviour
             r.transform.position = player.transform.position;
             //Rotates the rocket towards the mouse
             r.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ - 90);
+            //Plays shoot sound
+            FindObjectOfType<AudioManager>().Play("BombShoot");
             //Sends the rocket flying
             r.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         }

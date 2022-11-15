@@ -33,6 +33,8 @@ public class Swing : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.W) && allowGrapple)
         {
+            //play the swing sound
+            FindObjectOfType<AudioManager>().Play("Swing");
             //Shoots the grapple
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
             //Creates the visual line

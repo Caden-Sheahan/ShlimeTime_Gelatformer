@@ -38,6 +38,7 @@ public class AbiltiesEnabler : MonoBehaviour
         //Gains power up 1
         if (collision.gameObject.tag == "PU1")
         {
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //Enables push script
             mainCam.GetComponent<Shoot>().enabled = true;
             controlsText[0].SetActive(true);
@@ -48,6 +49,7 @@ public class AbiltiesEnabler : MonoBehaviour
         }
         if (collision.gameObject.tag == "PU2")
         {
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //enables time slow script
             gameObject.GetComponent<TimeSlow>().enabled = true;
             controlsText[1].SetActive(true);
@@ -57,6 +59,7 @@ public class AbiltiesEnabler : MonoBehaviour
         }
         if (collision.gameObject.tag == "PU3")
         {
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //enables jetpack script
             gameObject.GetComponent<JetPack>().enabled = true;
             controlsText[2].SetActive(true);
@@ -66,12 +69,14 @@ public class AbiltiesEnabler : MonoBehaviour
         }
         if (collision.gameObject.tag == "PU4")
         {
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //enables swing script
             gameObject.GetComponent<Swing>().enabled = true;
             controlsText[3].SetActive(true);
             FindObjectOfType<AudioManager>().Play("PowerGain");
             //saves ownership of swing in Json
             JsonManager.instance.SaveSwing(true);
+            
         }
     }
 }

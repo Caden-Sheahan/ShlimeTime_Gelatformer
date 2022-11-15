@@ -8,9 +8,12 @@ public class GameController : MonoBehaviour
     public GameObject mainCam;
     public GameObject Player;
     public GameObject timeBrazier;
+    public GameObject Buttons;
+    public GameObject HowToPlayMenu;
     public static bool isTimeOn;
     public GameObject PauseUI;
     float tempTime;
+    private Vector2 ReturnToHub = new Vector2(269, 9.5f);
 
     // Update is called once per frame
     void Update()
@@ -24,8 +27,13 @@ public class GameController : MonoBehaviour
         {
             PauseGame();
         }
+        //warp to hub code:
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Player.transform.position = ReturnToHub;
+        }
 
-        if (isTimeOn)
+if (isTimeOn)
         {
             timeBrazier.SetActive(true);
         }
@@ -34,10 +42,7 @@ public class GameController : MonoBehaviour
             timeBrazier.SetActive(false);
         }
     }
-    /// <summary>
-    /// Time.timeScale = 1;
-    /// Time.fixedDeltaTime = 0.02f;
-    /// </summary>
+
     public void PauseGame()
     {
         if (Time.timeScale != 0)
@@ -52,9 +57,7 @@ public class GameController : MonoBehaviour
             Player.GetComponent<TimeSlow>().enabled = false;
             Player.GetComponent<JetPack>().enabled = false;
             Player.GetComponent<Swing>().enabled = false;
-
         }
-        
     }
 
     public void ResumeGame()
@@ -62,17 +65,32 @@ public class GameController : MonoBehaviour
         PauseUI.SetActive(false);
         Time.timeScale = tempTime;
 
-
         mainCam.GetComponent<Shoot>().enabled = true;
         Player.GetComponent<TimeSlow>().enabled = true;
         Player.GetComponent<JetPack>().enabled = true;
         Player.GetComponent<Swing>().enabled = true;
     }
 
-    //warp to hub code:
-    //private Vector2 ReturnToHub = new Vector2(269, 9.5f);
-    //if (Input.GetKeyDown(KeyCode.Tab))
-    //{
-    //    Player.transform.position = ReturnToHub;
-    //}
+    public void HowToGame()
+    {
+        HowToPlayMenu.SetActive(true);
+        Buttons.SetActive(false);
+    }
+
+    public void BackButton()
+    {
+        HowToPlayMenu.SetActive(false);
+        Buttons.SetActive(true);
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        print("Quiiiiiiit");
+    }
 }
