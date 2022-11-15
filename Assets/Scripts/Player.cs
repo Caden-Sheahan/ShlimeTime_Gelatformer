@@ -132,7 +132,8 @@ public class Player : MonoBehaviour
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             Respawn();
-            slimeTrail.enabled = true;
+            
+            
         }
         
         if (collision.CompareTag("Wall"))
@@ -258,6 +259,9 @@ public class Player : MonoBehaviour
             //Stops the jetpack
             JetPack j = FindObjectOfType<JetPack>();
             j.EndJetPackEarly();
+
+            Invoke("slimeTrailReenabled", .3f);
+            
         }
     }
 
@@ -288,7 +292,10 @@ public class Player : MonoBehaviour
     {
         canPushed = true;
     }
-
+    public void slimeTrailReenabled()
+    {
+        slimeTrail.enabled = true;
+    }
     //Ignore this
     //call from another Class
     //gameObjectVariableName.GetComponent<Codename>.functionCalled
