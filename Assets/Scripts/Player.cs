@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
     private bool isJungle;
     private bool isCastle;
 
+    //checkpoint variables
+    public GameObject checkpointEffect;
+    public Transform playerPos;
+
 
 
     // Start is called before the first frame update
@@ -110,6 +114,7 @@ public class Player : MonoBehaviour
         {
             //Assigns respawn position
             resPos = collision.transform.position;
+            Instantiate(checkpointEffect, playerPos);
             FindObjectOfType<AudioManager>().Play("Checkpoints");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
@@ -140,54 +145,73 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("CAVE") && isSwamp == false)
         {
-            //Play SplatSound1
             FindObjectOfType<AudioManager>().Play("SwampMusic");
+            FindObjectOfType<AudioManager>().Play("CaveDrips");
             isSwamp = true;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
             isHub = false;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
             isJungle = false;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
             isCastle = false;
         }
-        if (collision.CompareTag("HUB") && isSwamp == false)
+        if (collision.CompareTag("HUB") && isHub == false)
         {
-            //Play SplatSound1
-            FindObjectOfType<AudioManager>().Play("PlainsMusic");
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
             isSwamp = false;
-            FindObjectOfType<AudioManager>().StopCoroutine("SwampMusic");
-            isHub = false;
+            FindObjectOfType<AudioManager>().Play("PlainsMusic");
+            isHub = true;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
             isJungle = false;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
             isCastle = false;
         }
-        if (collision.CompareTag("CRYSTAL") && isSwamp == false)
+        if (collision.CompareTag("CRYSTAL") && isCave == false)
         {
-            //Play SplatSound1
-            FindObjectOfType<AudioManager>().Play("SwampMusic");
-            isSwamp = true;
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
             isHub = false;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
             isJungle = false;
-            isCave = false;
+            FindObjectOfType<AudioManager>().Play("KrystalKaveMusic");
+            isCave = true;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
             isCastle = false;
         }
-        if (collision.CompareTag("JUNGLE") && isSwamp == false)
+        if (collision.CompareTag("JUNGLE") && isJungle == false)
         {
-            //Play SplatSound1
-            FindObjectOfType<AudioManager>().Play("SwampMusic");
-            isSwamp = true;
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
             isHub = false;
-            isJungle = false;
+            FindObjectOfType<AudioManager>().Play ("JungleMusic");
+            isJungle = true;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
             isCastle = false;
         }
-        if (collision.CompareTag("CASTLE") && isSwamp == false)
+        if (collision.CompareTag("CASTLE") && isCastle == false)
         {
-            //Play SplatSound1
-            FindObjectOfType<AudioManager>().Play("SwampMusic");
-            isSwamp = true;
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
             isHub = false;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
             isJungle = false;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
-            isCastle = false;
+            FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
+            isCastle = true;
         }
     }
 
@@ -203,7 +227,7 @@ public class Player : MonoBehaviour
     {
         // If you don't touch the checkpoint first, you don't respawn. Ez fix,
         // just wanted to mention it.
-        if(resPos != Vector2.zero)
+        if (resPos != Vector2.zero)
         {
             //Kill player
             //Brings back the swing on death
@@ -232,6 +256,15 @@ public class Player : MonoBehaviour
             j.EndJetPackEarly();
         }
     }
+
+    /*
+    IEnumerator DingDing() 
+    {
+        Instantiate(checkpointEffect, playerPos);
+        yield return WaitForSeconds(3f);
+        Destroy(gameObject);
+    } 
+    */
 
     /*
     public void Handle_TimeSlowEvent()
