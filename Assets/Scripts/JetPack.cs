@@ -66,6 +66,7 @@ public class JetPack : MonoBehaviour
         }
         else
         {
+            //returns child gravity to correct values
             ChildGravReset();
         }
     }
@@ -109,6 +110,7 @@ public class JetPack : MonoBehaviour
 
     void ChildGravNone()
     {
+        //makes player gravity 0 while using jetpack
         rb.gravityScale = 0;
         child1.GetComponent<Rigidbody2D>().gravityScale = 0;
         child2.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -124,7 +126,9 @@ public class JetPack : MonoBehaviour
         {
             rb = GetComponent<Rigidbody2D>();
         }
+        //resets player gravity
         rb.gravityScale = 1;
+        //resets child gravity
         child1.GetComponent<Rigidbody2D>().gravityScale = 1;
         child2.GetComponent<Rigidbody2D>().gravityScale = 1;
         child3.GetComponent<Rigidbody2D>().gravityScale = 1;
@@ -133,8 +137,4 @@ public class JetPack : MonoBehaviour
         child6.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
-    public void OnDestroy()
-    {
-        //TimeSlow.jetpackSlowTimeEvent -= Handle_TimeSlowEvent;
-    }
 }

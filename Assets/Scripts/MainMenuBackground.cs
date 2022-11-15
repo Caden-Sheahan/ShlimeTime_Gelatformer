@@ -15,6 +15,7 @@ public class MainMenuBackground : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //makes the background move and warp around
         transform.position = new Vector2(transform.position.x, transform.position.y + movespeed);
 
         if (transform.position.y >= resetY)

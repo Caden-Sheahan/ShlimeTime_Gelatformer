@@ -19,6 +19,7 @@ public class DropPlatformEnabler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Creates that platform over the crystal cave to prevent falling back in
         if(collision.gameObject.tag == "Player")
         {
             drop.SetActive(true);

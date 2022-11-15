@@ -35,19 +35,24 @@ public class Swing : MonoBehaviour
         {
             //Shoots the grapple
             Vector2 mousePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            //Creates the visual line
             lineRender.SetPosition(0, mousePos);
             lineRender.SetPosition(1, transform.position);
+            //Creates the point to swing around
             distJoint.connectedAnchor = mousePos;
+            //Makes line and swing point active
             distJoint.enabled = true;
             lineRender.enabled = true;
+            //adjusts player velocity
             rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y);
-
+            //Changes player color
             slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.cyan;
             slimeEyes.GetComponent<SpriteRenderer>().color = Color.cyan;
 
         }
         else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
         {
+            //Brings back the grapple on release
             Recall();
             
         }
@@ -60,6 +65,7 @@ public class Swing : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Slightly increases player move speed while grapple
         if (Input.GetKey(KeyCode.W) && allowGrapple)
         {
             rb.velocity = new Vector2(rb.velocity.x * 1.001f, rb.velocity.y);
@@ -76,11 +82,13 @@ public class Swing : MonoBehaviour
     {
         //Recalls the grapple
         distJoint.enabled = false;
+        //Makes line invisible
         lineRender.enabled = false;
 
         allowGrapple = false;
         Invoke("canGrapple", .4f);
 
+        //Increases player velocity on release so long as they aren't too fast
         if ((rb.velocity.x < 11 && rb.velocity.y < 11) && (rb.velocity.x > -11 && rb.velocity.y > -11))
         {
             rb.velocity = new Vector2(rb.velocity.x * 1.25f, rb.velocity.y * 1.5f);

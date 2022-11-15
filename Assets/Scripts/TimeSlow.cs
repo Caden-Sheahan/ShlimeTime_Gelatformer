@@ -9,8 +9,8 @@ public class TimeSlow : MonoBehaviour
     bool slowTime = false;
     bool speedTime = false;
     bool canSlowDown = true;
-    public static Action slowTimeEvent;
-    public static Action jetpackSlowTimeEvent;
+    //public static Action slowTimeEvent;
+    //public static Action jetpackSlowTimeEvent;
 
     public GameObject slimeBod;
     public GameObject slimeEyes;
@@ -71,8 +71,8 @@ public class TimeSlow : MonoBehaviour
             if (Time.timeScale <= 1)
             {
                 //Speeds up time back to normal
-                slowTimeEvent?.Invoke();
-                jetpackSlowTimeEvent?.Invoke();
+                //slowTimeEvent?.Invoke();
+                //jetpackSlowTimeEvent?.Invoke();
                 Time.timeScale *= 1.05f;
                 Time.fixedDeltaTime = Time.timeScale * .02f;
             }
@@ -87,17 +87,5 @@ public class TimeSlow : MonoBehaviour
                 jetpackSlowTimeEvent?.Invoke();
             }
         }
-    }
-    void TimeSlowDown()
-    {
-        //  ZA WARUDO
-        //Starts the slow down of time
-        slowTime = true;
-    }
-
-    void TimeSpeedUp()
-    {
-        //Starts the speed up of time
-        //speedTime = true;
     }
 }

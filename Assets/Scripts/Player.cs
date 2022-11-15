@@ -21,14 +21,15 @@ public class Player : MonoBehaviour
     Vector2 childLoc4;
     Vector2 childLoc5;
     Vector2 childLoc6;
-    //public Transform playerTransform;
     bool canPushed = true;
     // Start is called before the first frame update
     void Start()
     {
-        defaultSpeed = speedForceApplied;
+        //defaultSpeed = speedForceApplied;
         rb.GetComponent<Rigidbody2D>();
-        TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
+        //TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
+
+        //finds the position of the children relative to the player
         childLoc1 = child1.transform.localPosition;
         childLoc2 = child2.transform.localPosition;
         childLoc3 = child3.transform.localPosition;
@@ -36,11 +37,13 @@ public class Player : MonoBehaviour
         childLoc5 = child5.transform.localPosition;
         childLoc6 = child6.transform.localPosition;
 
+        //Places the player at the location saved in Json
         transform.position = JsonManager.instance.GSD.resetPos;
     }
 
     private void Update()
     {
+        //Resets player on demand
         if(Input.GetKeyDown(KeyCode.R))    
         {
             Respawn();
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Speed cap
         if (GetComponent<Rigidbody2D>().velocity.x >= 13f || GetComponent<Rigidbody2D>().velocity.y >= 13f)
         {
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
@@ -59,6 +63,7 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
         }
 
+        //Moves player up in the crystal cave lift
         if(lift)
         {
             rb.velocity = new Vector2(rb.velocity.x, 7);
@@ -91,6 +96,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Checkpoints");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
+            //Saves position in Json to use if the player quits
             JsonManager.instance.SavePos(resPos);
 
 
@@ -129,27 +135,35 @@ public class Player : MonoBehaviour
         if(resPos != Vector2.zero)
         {
             //Kill player
+            //Brings back the swing on death
             gameObject.GetComponent<Swing>().Recall();
+            //Reset to checkpoint
             transform.position = resPos;
+            //Makes velocity 0
             rb.velocity = Vector2.zero;
+            //Makes the child velocity 0
             child1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child3.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child5.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             child6.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            //Resets position of the children relative to player
+            //Prevents deformed player
             child1.transform.localPosition = childLoc1;
             child2.transform.localPosition = childLoc2;
             child3.transform.localPosition = childLoc3;
             child4.transform.localPosition = childLoc4;
             child5.transform.localPosition = childLoc5;
             child6.transform.localPosition = childLoc6;
+            //Stops the jetpack
             JetPack j = FindObjectOfType<JetPack>();
             j.EndJetPackEarly();
         }
         
     }
 
+    /*
     public void Handle_TimeSlowEvent()
     {
         //Adjusts force relative to time
@@ -161,7 +175,7 @@ public class Player : MonoBehaviour
     public void OnDestroy()
     {
         TimeSlow.slowTimeEvent -= Handle_TimeSlowEvent;
-    }
+    }*/
 
     public void allowPush()
     {
