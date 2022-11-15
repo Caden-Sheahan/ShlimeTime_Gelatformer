@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.name != "FirstCheckpoint")
             {                
-                Instantiate(checkpointEffect, playerPos);
+                Instantiate(checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("Checkpoints");
             }
             //Assigns respawn position
