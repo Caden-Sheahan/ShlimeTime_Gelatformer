@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
     {
         PauseUI.SetActive(false);
         Time.timeScale = tempTime;
-        Debug.Log(tempTime);
+
 
         mainCam.GetComponent<Shoot>().enabled = true;
         Player.GetComponent<TimeSlow>().enabled = true;
