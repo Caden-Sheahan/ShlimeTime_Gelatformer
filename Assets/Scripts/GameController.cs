@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
             Player.transform.position = ReturnToHub;
         }
 
-if (isTimeOn)
+        if (isTimeOn)
         {
             timeBrazier.SetActive(true);
         }

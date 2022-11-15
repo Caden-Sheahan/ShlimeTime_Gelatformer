@@ -9802,6 +9802,8 @@ MonoBehaviour:
   child4: {fileID: 2114157796}
   child5: {fileID: 1037457545}
   child6: {fileID: 1548546053}
+  checkpointEffect: {fileID: 0}
+  playerPos: {fileID: 0}
 --- !u!58 &297030020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22489,7 +22491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GSD:
-    resetPos: {x: 20, y: 0}
+    resetPos: {x: 0, y: 0}
     hasPush: 0
     hasSlow: 0
     hasJetPack: 0
