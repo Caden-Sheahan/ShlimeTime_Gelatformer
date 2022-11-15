@@ -114,16 +114,16 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "RespawnPoint")
         {
+            if (collision.gameObject.name != "FirstCheckpoint")
+            {                
+                Instantiate(checkpointEffect, playerPos);
+                FindObjectOfType<AudioManager>().Play("Checkpoints");
+            }
             //Assigns respawn position
             resPos = collision.transform.position;
-            Instantiate(checkpointEffect, playerPos);
-            FindObjectOfType<AudioManager>().Play("Checkpoints");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-
             //Saves position in Json to use if the player quits
             JsonManager.instance.SavePos(resPos);
-
-
         }
 
         if (collision.CompareTag("Obstacles"))
