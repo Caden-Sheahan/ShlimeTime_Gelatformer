@@ -54,8 +54,6 @@ public class Swing : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
         {
-            //Play the swing release sound
-            FindObjectOfType<AudioManager>().Play("SwingRelease");
             //Brings back the grapple on release
             Recall();
             

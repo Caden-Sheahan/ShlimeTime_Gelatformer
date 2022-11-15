@@ -83,7 +83,7 @@ public class JetPack : MonoBehaviour
         mouseDir.Normalize();
 
         rb.AddForce(mouseDir * speedForceApplied, ForceMode2D.Impulse);
-        FindObjectOfType<AudioManager>().Play("Push1");
+        FindObjectOfType<AudioManager>().Play("SwingRelease");
     }
 
     /*

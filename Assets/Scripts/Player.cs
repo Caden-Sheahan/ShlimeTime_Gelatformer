@@ -22,6 +22,16 @@ public class Player : MonoBehaviour
     Vector2 childLoc5;
     Vector2 childLoc6;
     bool canPushed = true;
+
+    //Music Variables
+    private bool isSwamp;
+    private bool isHub;
+    private bool isCave;
+    private bool isJungle;
+    private bool isCastle;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +49,13 @@ public class Player : MonoBehaviour
 
         //Places the player at the location saved in Json
         transform.position = JsonManager.instance.GSD.resetPos;
+
+        //no music plays on start
+        isSwamp = false;
+        isHub = false;
+        isJungle = false;
+        isCave = false;
+        isCastle = false;
     }
 
     private void Update()
@@ -118,6 +135,59 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "CrystalLift")
         {
             lift = true;
+        }
+
+
+        if (collision.CompareTag("CAVE") && isSwamp == false)
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("SwampMusic");
+            isSwamp = true;
+            isHub = false;
+            isJungle = false;
+            isCave = false;
+            isCastle = false;
+        }
+        if (collision.CompareTag("HUB") && isSwamp == false)
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("PlainsMusic");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().StopCoroutine("SwampMusic");
+            isHub = false;
+            isJungle = false;
+            isCave = false;
+            isCastle = false;
+        }
+        if (collision.CompareTag("CRYSTAL") && isSwamp == false)
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("SwampMusic");
+            isSwamp = true;
+            isHub = false;
+            isJungle = false;
+            isCave = false;
+            isCastle = false;
+        }
+        if (collision.CompareTag("JUNGLE") && isSwamp == false)
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("SwampMusic");
+            isSwamp = true;
+            isHub = false;
+            isJungle = false;
+            isCave = false;
+            isCastle = false;
+        }
+        if (collision.CompareTag("CASTLE") && isSwamp == false)
+        {
+            //Play SplatSound1
+            FindObjectOfType<AudioManager>().Play("SwampMusic");
+            isSwamp = true;
+            isHub = false;
+            isJungle = false;
+            isCave = false;
+            isCastle = false;
         }
     }
 
