@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     Vector2 childLoc5;
     Vector2 childLoc6;
     bool canPushed = true;
+    public TrailRenderer slimeTrail;
 
     //Music Variables
     private bool isSwamp;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         //defaultSpeed = speedForceApplied;
         rb.GetComponent<Rigidbody2D>();
         //TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
+        slimeTrail = GetComponent<TrailRenderer>();
 
         //finds the position of the children relative to the player
         childLoc1 = child1.transform.localPosition;
@@ -126,9 +128,11 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Obstacles"))
         {
+            slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             Respawn();
+            slimeTrail.enabled = true;
         }
         
         if (collision.CompareTag("Wall"))
