@@ -160,7 +160,6 @@ public class Player : MonoBehaviour
             JetPack j = FindObjectOfType<JetPack>();
             j.EndJetPackEarly();
         }
-        
     }
 
     /*
