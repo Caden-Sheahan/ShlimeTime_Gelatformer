@@ -27,6 +27,7 @@ public class TimeSlow : MonoBehaviour
         {
             if(canSlowDown)
             {
+                FindObjectOfType<AudioManager>().Play("TimeSlow");
                 //Starts the process of slowing down time
                 canSlowDown = false;
                 speedTime = false;
@@ -37,6 +38,7 @@ public class TimeSlow : MonoBehaviour
             } 
             else if(!canSlowDown)
             {
+                FindObjectOfType<AudioManager>().Play("TimeSpeedUp");
                 canSlowDown = true;
                 slowTime = false;
                 speedTime = true;

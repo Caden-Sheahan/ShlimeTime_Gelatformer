@@ -35,6 +35,7 @@ public class JetPack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && canFloat)
         {
+            FindObjectOfType<AudioManager>().Play("Push1");
             floating = true;
             Invoke("JetpackJump", 1.3f);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .65f);
@@ -82,6 +83,7 @@ public class JetPack : MonoBehaviour
         mouseDir.Normalize();
 
         rb.AddForce(mouseDir * speedForceApplied, ForceMode2D.Impulse);
+        FindObjectOfType<AudioManager>().Play("SwingRelease");
     }
 
     /*
