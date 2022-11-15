@@ -105,6 +105,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Obstacles"))
         {
             //Checks if player collided with an obstacle
+            FindObjectOfType<AudioManager>().Play("SlimeDeath");
             Respawn();
         }
         

@@ -29,6 +29,7 @@ public class RocketAction : MonoBehaviour
         //Checks if enemy collides with walls
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
         {
+            FindObjectOfType<AudioManager>().Play("BombExplode");
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
