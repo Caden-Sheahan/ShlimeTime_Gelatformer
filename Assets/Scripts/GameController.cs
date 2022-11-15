@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public static bool isTimeOn;
     public GameObject PauseUI;
     float tempTime;
+    private Vector2 ReturnToHub = new Vector2(269, 9.5f);
 
     // Update is called once per frame
     void Update()
@@ -26,8 +27,13 @@ public class GameController : MonoBehaviour
         {
             PauseGame();
         }
+        //warp to hub code:
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Player.transform.position = ReturnToHub;
+        }
 
-        if (isTimeOn)
+if (isTimeOn)
         {
             timeBrazier.SetActive(true);
         }
@@ -87,11 +93,4 @@ public class GameController : MonoBehaviour
         Application.Quit();
         print("Quiiiiiiit");
     }
-
-    //warp to hub code:
-    //private Vector2 ReturnToHub = new Vector2(269, 9.5f);
-    //if (Input.GetKeyDown(KeyCode.Tab))
-    //{
-    //    Player.transform.position = ReturnToHub;
-    //}
 }
