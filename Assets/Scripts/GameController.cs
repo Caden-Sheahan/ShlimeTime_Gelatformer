@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject mainCam;
     public GameObject Player;
     public GameObject timeBrazier;
     public static bool isTimeOn;
     public GameObject PauseUI;
+    float tempTime;
 
     // Update is called once per frame
     void Update()
@@ -38,14 +40,33 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void PauseGame()
     {
-        PauseUI.SetActive(true);
-        Time.timeScale = 0;
+        if (Time.timeScale != 0)
+        {
+            tempTime = Time.timeScale;
+
+            PauseUI.SetActive(true);
+        
+            Time.timeScale = 0;
+
+            mainCam.GetComponent<Shoot>().enabled = false;
+            Player.GetComponent<TimeSlow>().enabled = false;
+            Player.GetComponent<JetPack>().enabled = false;
+            Player.GetComponent<Swing>().enabled = false;
+
+        }
+        
     }
 
     public void ResumeGame()
     {
         PauseUI.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = tempTime;
+        Debug.Log(tempTime);
+
+        mainCam.GetComponent<Shoot>().enabled = true;
+        Player.GetComponent<TimeSlow>().enabled = true;
+        Player.GetComponent<JetPack>().enabled = true;
+        Player.GetComponent<Swing>().enabled = true;
     }
 
     //warp to hub code:
