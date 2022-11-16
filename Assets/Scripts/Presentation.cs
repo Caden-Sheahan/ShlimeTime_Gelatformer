@@ -7,7 +7,7 @@ public class Presentation : MonoBehaviour
     public GameObject Player;
 
     private Vector2 CaveWarp = new Vector2(-30, 7);
-    private Vector2 JungleWarp = new Vector2(330, -2);
+    private Vector2 JungleWarp = new Vector2(332, -2);
     private Vector2 CastleWarp = new Vector2(215, 54);
 
     // Update is called once per frame
