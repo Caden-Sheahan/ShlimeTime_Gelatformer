@@ -12,6 +12,8 @@ public class Swing : MonoBehaviour
     public DistanceJoint2D distJoint;
     public Rigidbody2D rb;
     bool allowGrapple = true;
+    bool cancelJetPackBool = false;
+    public static bool dontResetJetPackAgain = false;
     public GameObject slimeBod;
     public GameObject slimeEyes;
 
@@ -51,11 +53,32 @@ public class Swing : MonoBehaviour
             slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.cyan;
             slimeEyes.GetComponent<SpriteRenderer>().color = Color.cyan;
 
+            if(!JetPack.canFloat && !dontResetJetPackAgain)
+            {
+                JetPack j = FindObjectOfType<JetPack>();
+                j.CoolDownCancel();
+                cancelJetPackBool = true;
+                dontResetJetPackAgain = true;
+            }
+
         }
         else if (Input.GetKeyUp(KeyCode.W) && allowGrapple)
         {
             //Brings back the grapple on release
             Recall();
+            if(cancelJetPackBool == true)
+            {
+                JetPack j = FindObjectOfType<JetPack>();
+                j.CoolDownRestart();
+                cancelJetPackBool = false;
+                dontResetJetPackAgain = false;
+                
+            }
+            else if(!JetPack.canFloat)
+            {
+                JetPack j = FindObjectOfType<JetPack>();
+                j.CoolDownCancel();
+            }
             
         }
         if (distJoint.enabled)
@@ -71,6 +94,23 @@ public class Swing : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && allowGrapple)
         {
             rb.velocity = new Vector2(rb.velocity.x * 1.001f, rb.velocity.y);
+
+            
+            if (!JetPack.canFloat && !dontResetJetPackAgain)
+            {
+                JetPack j = FindObjectOfType<JetPack>();
+                j.CoolDownCancel();
+                cancelJetPackBool = true;
+                dontResetJetPackAgain = true;
+            }
+            
+             /*
+            if(JetPack.canFloat)
+            {
+                JetPack.canFloat = false;
+                cancelJetPackBool = true;
+            }
+             */
         }
     }
 

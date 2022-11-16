@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
         JsonManager.instance.SaveTime(false);
         JsonManager.instance.SaveJetPack(false);
         JsonManager.instance.SaveSwing(false);
+        JsonManager.instance.SavePlatform(false);
         SceneManager.LoadScene("Map");
     }
 

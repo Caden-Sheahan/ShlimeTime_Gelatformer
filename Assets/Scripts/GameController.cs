@@ -65,10 +65,10 @@ public class GameController : MonoBehaviour
         PauseUI.SetActive(false);
         Time.timeScale = tempTime;
 
-        mainCam.GetComponent<Shoot>().enabled = true;
-        Player.GetComponent<TimeSlow>().enabled = true;
-        Player.GetComponent<JetPack>().enabled = true;
-        Player.GetComponent<Swing>().enabled = true;
+        mainCam.GetComponent<Shoot>().enabled = JsonManager.instance.GSD.hasPush;
+        Player.GetComponent<TimeSlow>().enabled = JsonManager.instance.GSD.hasSlow;
+        Player.GetComponent<JetPack>().enabled = JsonManager.instance.GSD.hasJetPack;
+        Player.GetComponent<Swing>().enabled = JsonManager.instance.GSD.hasSwing;
     }
 
     public void HowToGame()
