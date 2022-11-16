@@ -28,10 +28,10 @@ public class GameController : MonoBehaviour
             PauseGame();
         }
         //warp to hub code:
-        //if (Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    Player.transform.position = ReturnToHub;
-        //}
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Player.transform.position = ReturnToHub;
+        }
 
         if (isTimeOn)
         {
