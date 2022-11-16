@@ -8,7 +8,7 @@ public class DropPlatformEnabler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        drop.SetActive(JsonManager.instance.GSD.CrystalPlatform);
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class DropPlatformEnabler : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             drop.SetActive(true);
+            JsonManager.instance.SavePlatform(true);
         }
     }
 }

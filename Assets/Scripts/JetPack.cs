@@ -9,7 +9,7 @@ public class JetPack : MonoBehaviour
     float speedForceApplied = 3;
     float defaultSpeed;
     bool floating = false;
-    bool canFloat = true;
+    public static bool canFloat = true;
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
@@ -33,7 +33,7 @@ public class JetPack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && canFloat)
+        if (Input.GetKeyDown(KeyCode.A) && canFloat && !Swing.dontResetJetPackAgain)
         {
             FindObjectOfType<AudioManager>().Play("Push1");
             floating = true;
@@ -108,6 +108,7 @@ public class JetPack : MonoBehaviour
     public void CanJetPack()
     {
         canFloat = true;
+        //Swing.dontResetJetPackAgain = false;
     }
 
     void ChildGravNone()
@@ -137,6 +138,18 @@ public class JetPack : MonoBehaviour
         child4.GetComponent<Rigidbody2D>().gravityScale = 1;
         child5.GetComponent<Rigidbody2D>().gravityScale = 1;
         child6.GetComponent<Rigidbody2D>().gravityScale = 1;
+    }
+
+    public void CoolDownCancel()
+    {
+        CancelInvoke("JetPackJump");
+        CancelInvoke("CanJetPack");
+    }
+
+    public void CoolDownRestart()
+    {
+        CancelInvoke("JetPackJump");
+        Invoke("CanJetPack", 1.5f);
     }
 
 }

@@ -57,6 +57,11 @@ public class JsonManager : MonoBehaviour
         GSD.hasSwing = tempBool;
         saveText();
     }
+    public void SavePlatform(bool tempBool)
+    {
+        GSD.CrystalPlatform = tempBool;
+        saveText();
+    }
 
     public void saveText()
     {
@@ -90,4 +95,5 @@ public class GameSaveData
     public bool hasSlow;
     public bool hasJetPack;
     public bool hasSwing;
+    public bool CrystalPlatform;
 }

@@ -44,6 +44,11 @@ public class Player : MonoBehaviour
         rb.GetComponent<Rigidbody2D>();
         //TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
         slimeTrail = GetComponent<TrailRenderer>();
+        Invoke("slimeTrailReenabled", .3f);
+
+        //Disables the slime trail for a split second
+        slimeTrail.enabled = false;
+
 
         //finds the position of the children relative to the player
         childLoc1 = child1.transform.localPosition;
