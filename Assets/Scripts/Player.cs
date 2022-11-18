@@ -288,10 +288,7 @@ public class Player : MonoBehaviour
 
         
     }
-    public void OnDestroy()
-    {
-        TimeSlow.slowTimeEvent -= Handle_TimeSlowEvent;
-    }*/
+    */
 
     public void allowPush()
     {
