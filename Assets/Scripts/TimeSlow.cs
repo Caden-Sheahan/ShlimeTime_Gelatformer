@@ -39,9 +39,7 @@ public class TimeSlow : MonoBehaviour
             else if(!canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSpeedUp");
-                canSlowDown = true;
-                slowTime = false;
-                speedTime = true;
+                speedBackUp();
             }
         }
     }
@@ -84,5 +82,13 @@ public class TimeSlow : MonoBehaviour
                 canSlowDown = true;
             }
         }
+    }
+
+    public void speedBackUp()
+    {
+        
+        canSlowDown = true;
+        slowTime = false;
+        speedTime = true;
     }
 }
