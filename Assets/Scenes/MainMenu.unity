@@ -9802,6 +9802,7 @@ MonoBehaviour:
   child4: {fileID: 2114157796}
   child5: {fileID: 1037457545}
   child6: {fileID: 1548546053}
+  slimeTrail: {fileID: 0}
   checkpointEffect: {fileID: 0}
   playerPos: {fileID: 0}
 --- !u!58 &297030020
@@ -22496,6 +22497,7 @@ MonoBehaviour:
     hasSlow: 0
     hasJetPack: 0
     hasSwing: 0
+    CrystalPlatform: 0
 --- !u!4 &1501377837
 Transform:
   m_ObjectHideFlags: 0
