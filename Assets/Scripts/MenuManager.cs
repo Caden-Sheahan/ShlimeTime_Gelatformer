@@ -55,6 +55,10 @@ public class MenuManager : MonoBehaviour
         {
             HowToPlayMenu.SetActive(true);
             isInfoActive = false;
+            if(!creditsActive)
+            {
+                ViewCredits();
+            }
         }
     }
 
@@ -69,6 +73,10 @@ public class MenuManager : MonoBehaviour
         {
             CreditsMenu.SetActive(true);
             creditsActive = false;
+            if(!isInfoActive)
+            {
+                HowToGame();
+            }
         }
     }    
 
