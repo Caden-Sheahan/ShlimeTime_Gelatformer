@@ -264,6 +264,8 @@ public class Player : MonoBehaviour
             //Stops the jetpack
             JetPack j = FindObjectOfType<JetPack>();
             j.EndJetPackEarly();
+            TimeSlow s = FindObjectOfType<TimeSlow>();
+            s.speedBackUp();
 
             Invoke("slimeTrailReenabled", .3f);
             
