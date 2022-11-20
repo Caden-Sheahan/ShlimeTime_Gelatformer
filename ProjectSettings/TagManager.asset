@@ -61,11 +61,11 @@ TagManager:
   - name: Environment
     uniqueID: 2943348155
     locked: 0
-  - name: Player
-    uniqueID: 3869899537
-    locked: 0
   - name: Platforms
     uniqueID: 388476587
+    locked: 0
+  - name: Player
+    uniqueID: 3869899537
     locked: 0
   - name: Ground
     uniqueID: 1817791465
