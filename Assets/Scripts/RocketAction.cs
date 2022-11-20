@@ -27,7 +27,7 @@ public class RocketAction : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Checks if enemy collides with walls
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacles")
         {
             FindObjectOfType<AudioManager>().Play("BombExplode");
             Instantiate(explosion, transform.position, Quaternion.identity);
