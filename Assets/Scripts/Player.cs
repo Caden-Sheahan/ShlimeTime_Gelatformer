@@ -136,7 +136,8 @@ public class Player : MonoBehaviour
             slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
-            anim.SetBool("SlowOn", false);
+            anim.SetBool("Death", true);
+            anim.SetBool("ToggleTime", false);
             Respawn();
         }
         
@@ -266,6 +267,7 @@ public class Player : MonoBehaviour
             //Resets Time Slow
             TimeSlow s = FindObjectOfType<TimeSlow>();
             s.speedBackUp();
+            anim.SetBool("Death", false);
 
             Invoke("slimeTrailReenabled", .3f);
             
