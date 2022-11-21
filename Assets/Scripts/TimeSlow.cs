@@ -14,11 +14,13 @@ public class TimeSlow : MonoBehaviour
 
     public GameObject slimeBod;
     public GameObject slimeEyes;
+    public Animator anim; 
     // Start is called before the first frame update
     void Start()
     {
         slimeBod.GetComponent<SpriteShapeRenderer>().color = Color.yellow;
         slimeEyes.GetComponent<SpriteRenderer>().color = Color.yellow;
+        anim = GameObject.Find("TimeSlowUI").GetComponent<Animator>();
     }
 
     private void Update()
@@ -28,6 +30,7 @@ public class TimeSlow : MonoBehaviour
             if(canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSlow");
+                anim.SetTrigger("StartTime");
                 //Starts the process of slowing down time
                 canSlowDown = false;
                 speedTime = false;
@@ -39,6 +42,7 @@ public class TimeSlow : MonoBehaviour
             else if(!canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSpeedUp");
+                anim.SetTrigger("EndTime");
                 speedBackUp();
             }
         }
