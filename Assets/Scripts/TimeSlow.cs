@@ -90,7 +90,6 @@ public class TimeSlow : MonoBehaviour
 
     public void speedBackUp()
     {
-        
         canSlowDown = true;
         slowTime = false;
         speedTime = true;
