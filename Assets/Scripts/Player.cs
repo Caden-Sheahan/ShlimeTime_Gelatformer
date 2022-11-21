@@ -6,9 +6,11 @@ public class Player : MonoBehaviour
 {
     Vector2 resPos;
     public Rigidbody2D rb;
+    public Animator anim;
     float speedForceApplied = 3.0f;
     float defaultSpeed;
     bool lift = false;
+    public GameObject slimeBod;
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
@@ -33,22 +35,22 @@ public class Player : MonoBehaviour
 
     //checkpoint variables
     public GameObject checkpointEffect;
+    public GameObject checkpointFlame;
     public Transform playerPos;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         //defaultSpeed = speedForceApplied;
         rb.GetComponent<Rigidbody2D>();
+        // Gets animator of Time Slow UI
+        anim = GameObject.Find("TimeSlowUI").GetComponent<Animator>();
         //TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
         slimeTrail = GetComponent<TrailRenderer>();
         Invoke("slimeTrailReenabled", .3f);
 
         //Disables the slime trail for a split second
         slimeTrail.enabled = false;
-
 
         //finds the position of the children relative to the player
         childLoc1 = child1.transform.localPosition;
@@ -113,8 +115,6 @@ public class Player : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 20, GetComponent<Rigidbody2D>().velocity.y + force.y* 20);
 
             }
-            
-            
         }
 
         if (collision.gameObject.tag == "RespawnPoint")
@@ -136,9 +136,8 @@ public class Player : MonoBehaviour
             slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
+            anim.SetBool("SlowOn", false);
             Respawn();
-            
-            
         }
         
         if (collision.CompareTag("Wall"))
@@ -264,6 +263,7 @@ public class Player : MonoBehaviour
             //Stops the jetpack
             JetPack j = FindObjectOfType<JetPack>();
             j.EndJetPackEarly();
+            //Resets Time Slow
             TimeSlow s = FindObjectOfType<TimeSlow>();
             s.speedBackUp();
 
@@ -271,7 +271,6 @@ public class Player : MonoBehaviour
             
         }
     }
-
     /*
     IEnumerator DingDing() 
     {
