@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Player : MonoBehaviour
 {
     Vector2 resPos;
     public Rigidbody2D rb;
-    public Animator anim;
+    Animator TimeAnim;
     float speedForceApplied = 3.0f;
     float defaultSpeed;
     bool lift = false;
@@ -35,7 +36,6 @@ public class Player : MonoBehaviour
 
     //checkpoint variables
     public GameObject checkpointEffect;
-    public GameObject checkpointFlame;
     public Transform playerPos;
 
     // Start is called before the first frame update
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         //defaultSpeed = speedForceApplied;
         rb.GetComponent<Rigidbody2D>();
         // Gets animator of Time Slow UI
-        anim = GameObject.Find("TimeSlowUI").GetComponent<Animator>();
+        TimeAnim = GameObject.Find("TimeSlowUI").GetComponent<Animator>();
         //TimeSlow.slowTimeEvent += Handle_TimeSlowEvent;
         slimeTrail = GetComponent<TrailRenderer>();
         Invoke("slimeTrailReenabled", .3f);
@@ -123,6 +123,8 @@ public class Player : MonoBehaviour
             {                
                 Instantiate(checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("Checkpoints");
+                collision.gameObject.GetComponent<Animator>().SetTrigger("Burst");
+                collision.gameObject.GetComponent<SpriteRenderer>().color = slimeBod.GetComponent<SpriteShapeRenderer>().color;
             }
             //Assigns respawn position
             resPos = collision.transform.position;
@@ -136,7 +138,7 @@ public class Player : MonoBehaviour
             slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
-            anim.SetBool("SlowDownTime", false);
+            TimeAnim.SetBool("SlowDownTime", false);
             Respawn();
         }
         
