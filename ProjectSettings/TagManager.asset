@@ -18,6 +18,7 @@ TagManager:
   - CRYSTAL
   - JUNGLE
   - CASTLE
+  - SlowFall
   layers:
   - Default
   - TransparentFX
