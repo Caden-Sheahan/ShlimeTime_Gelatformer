@@ -13,19 +13,13 @@ public class GameController : MonoBehaviour
     public static bool isTimeOn;
     public GameObject PauseUI;
     float tempTime;
-    private Vector2 ReturnToHub = new Vector2(269, 9.5f);
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
-        }
-        //warp to hub code:
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            Player.transform.position = ReturnToHub;
         }
 
         if (isTimeOn)

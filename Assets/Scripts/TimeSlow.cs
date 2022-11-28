@@ -30,7 +30,8 @@ public class TimeSlow : MonoBehaviour
             if(canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSlow");
-                anim.SetTrigger("StartTime");
+                anim.SetBool("SlowDownTime", true);
+                anim.SetBool("SpeedUpTime", false);
                 //Starts the process of slowing down time
                 canSlowDown = false;
                 speedTime = false;
@@ -42,7 +43,7 @@ public class TimeSlow : MonoBehaviour
             else if(!canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSpeedUp");
-                anim.SetTrigger("EndTime");
+                anim.SetBool("SpeedUpTime", true);
                 speedBackUp();
             }
         }
