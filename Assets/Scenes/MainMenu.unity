@@ -9874,6 +9874,7 @@ GameObject:
   - component: {fileID: 297030018}
   - component: {fileID: 297030010}
   - component: {fileID: 297030024}
+  - component: {fileID: 297030025}
   m_Layer: 0
   m_Name: SlimeBoi
   m_TagString: Player
@@ -9931,6 +9932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 297030021}
+  slimeBod: {fileID: 0}
   child1: {fileID: 2036712686}
   child2: {fileID: 1996019880}
   child3: {fileID: 1301267908}
@@ -10064,6 +10066,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef1284176aef9b4b8d9108dd159e117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xMax: 5
+  xMin: 2
+--- !u!114 &297030025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297030009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177bda2e2809dfe45a7d05968fa950ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: -1
 --- !u!1 &309388217
 GameObject:
   m_ObjectHideFlags: 0

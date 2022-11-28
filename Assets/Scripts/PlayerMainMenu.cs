@@ -8,6 +8,9 @@ public class PlayerMainMenu : MonoBehaviour
     int randNumX = 0;
     int randNumY = 0;
 
+    public int xMax;
+    public int xMin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +31,11 @@ public class PlayerMainMenu : MonoBehaviour
             randNumY = Random.Range(0, 2);
         }
 
-        if (randNumX == 0 && transform.position.x < 5)
+        if (randNumX == 0 && transform.position.x < xMax)
         {
             transform.position = new Vector2(transform.position.x + .002f, transform.position.y);
         }
-        if (randNumX == 1 &&  transform.position.x > 2)
+        if (randNumX == 1 &&  transform.position.x > xMin)
         {
             transform.position = new Vector2(transform.position.x - .002f, transform.position.y);
         }
