@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Vector2 resPos;
     public Rigidbody2D rb;
     Animator TimeAnim;
+    int speedLimit = 13;
     float speedForceApplied = 3.0f;
     float defaultSpeed;
     bool lift = false;
@@ -85,11 +86,11 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Speed cap
-        if (GetComponent<Rigidbody2D>().velocity.x >= 13f || GetComponent<Rigidbody2D>().velocity.y >= 13f)
+        if (GetComponent<Rigidbody2D>().velocity.x >= speedLimit || GetComponent<Rigidbody2D>().velocity.y >= speedLimit)
         {
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
         }
-        if (GetComponent<Rigidbody2D>().velocity.x <= -13f || GetComponent<Rigidbody2D>().velocity.y <= -13f)
+        if (GetComponent<Rigidbody2D>().velocity.x <= -speedLimit || GetComponent<Rigidbody2D>().velocity.y <= -speedLimit)
         {
             GetComponent<Rigidbody2D>().velocity *= 0.95f;
         }
@@ -152,6 +153,11 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "CrystalLift")
         {
             lift = true;
+        }
+
+        if (collision.gameObject.tag == "SlowFall")
+        {
+            speedLimit = 10;
         }
 
 
@@ -246,6 +252,11 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "CrystalLift")
         {
             lift = false;
+        }
+
+        if (collision.gameObject.tag == "SlowFall")
+        {
+            speedLimit = 13;
         }
     }
 
