@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     private bool isCave;
     private bool isJungle;
     private bool isCastle;
+    private bool isOtherCastle;
 
     //checkpoint variables
     public GameObject checkpointEffect;
@@ -229,6 +230,20 @@ public class Player : MonoBehaviour
             isCave = false;
             FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
             isCastle = true;
+        }
+        if (collision.CompareTag("OTHERCASTLE") && isOtherCastle == false)
+        {
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
+            isHub = false;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
+            isJungle = false;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
+            isCave = false;
+            FindObjectOfType<AudioManager>().Play("CastleChorus");
+            isOtherCastle = true;
         }
     }
 
