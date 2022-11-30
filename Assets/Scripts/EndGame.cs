@@ -26,7 +26,7 @@ public class EndGame : MonoBehaviour
         Player.GetComponent<TimeSlow>().enabled = false;
         Player.GetComponent<Swing>().enabled = false;
         Player.GetComponent<LineRenderer>().enabled = false;
-        GameObject.Find("PlayerEyes").GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
+        GameObject.Find("Player Eyes").transform.rotation = Quaternion.Euler(0, 0, 0);
 
         crownAnim.SetTrigger("Fall");
     }
