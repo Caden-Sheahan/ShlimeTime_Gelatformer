@@ -18,17 +18,14 @@ public class Tutorial : MonoBehaviour
         else if (col.gameObject.name == TextTriggers[1])
         {
             TutorialTexts[0].SetActive(false);
-            TutorialTexts[1].SetActive(true);
         }
         else if (col.gameObject.name == TextTriggers[2])
         {
             TutorialTexts[1].SetActive(false);
-            TutorialTexts[2].SetActive(true);
         }
         else if (col.gameObject.name == TextTriggers[3])
         {
             TutorialTexts[2].SetActive(false);
-            TutorialTexts[3].SetActive(true);
         }
         else if (col.gameObject.name == TextTriggers[4])
         {
@@ -37,18 +34,6 @@ public class Tutorial : MonoBehaviour
         else if (col.gameObject.name == TextTriggers[5])
         {
             TutorialTexts[4].SetActive(false);
-        }
-        else if (col.gameObject.name == TextTriggers[6])
-        {
-            TutorialTexts[5].SetActive(false);
-        }
-        else if (col.gameObject.name == TextTriggers[7])
-        {
-            TutorialTexts[6].SetActive(false);
-        }
-        else if (col.gameObject.name == TextTriggers[8])
-        {
-            TutorialTexts[7].SetActive(false);
         }
     }
 }
