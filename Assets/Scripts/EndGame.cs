@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject MainCamera;
+    public GameObject Player;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        DisableControls();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DisableControls()
     {
-        
+        MainCamera.GetComponent<Shoot>().enabled = false;
+        Player.GetComponent<JetPack>().enabled = false;
+        Player.GetComponent<TimeSlow>().enabled = false;
+        Player.GetComponent<Swing>().enabled = false;
     }
 }
