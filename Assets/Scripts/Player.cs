@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             TimeAnim.SetBool("SlowDownTime", false);
+            TimeAnim.SetBool("SpeedUpTime", false);
             Respawn();
         }
         
