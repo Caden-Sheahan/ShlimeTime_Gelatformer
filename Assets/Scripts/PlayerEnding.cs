@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerEnding : MonoBehaviour
 {
-    public GameObject Player;
     Animator playerAnim;
     Animator crownAnim;
 
@@ -17,7 +16,6 @@ public class PlayerEnding : MonoBehaviour
     public void Roll()
     {
         playerAnim.enabled = true;
-        playerAnim.SetTrigger("Roll");
         crownAnim.SetTrigger("FallOff");
     }
 }
