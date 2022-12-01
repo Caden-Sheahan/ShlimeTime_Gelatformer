@@ -19,6 +19,7 @@ TagManager:
   - JUNGLE
   - CASTLE
   - OTHERCASTLE
+  - SlowFall
   layers:
   - Default
   - TransparentFX
@@ -56,8 +57,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: FarBackground
     uniqueID: 804715509
+    locked: 0
+  - name: CloseBackground
+    uniqueID: 2178192987
     locked: 0
   - name: Environment
     uniqueID: 2943348155
