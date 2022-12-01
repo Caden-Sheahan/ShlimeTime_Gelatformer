@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //Resets player on demand
-        if(Input.GetKeyDown(KeyCode.R))    
+        if(Input.GetKeyDown(KeyCode.R) && !EndGame.GameEnding)    
         {
             Respawn();
         }
@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             TimeAnim.SetBool("SlowDownTime", false);
+            TimeAnim.SetBool("SpeedUpTime", false);
             Respawn();
         }
         

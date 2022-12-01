@@ -44,6 +44,7 @@ public class TimeSlow : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("TimeSpeedUp");
                 anim.SetBool("SpeedUpTime", true);
+                anim.SetBool("SlowDownTime", false);
                 speedBackUp();
             }
         }
