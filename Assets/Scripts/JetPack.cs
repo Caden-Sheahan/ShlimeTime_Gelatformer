@@ -108,7 +108,7 @@ public class JetPack : MonoBehaviour
     public void CanJetPack()
     {
         canFloat = true;
-        //Swing.dontResetJetPackAgain = false;
+        Swing.dontResetJetPackAgain = false;
     }
 
     void ChildGravNone()
