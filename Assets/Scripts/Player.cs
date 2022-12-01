@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //Resets player on demand
-        if(Input.GetKeyDown(KeyCode.R))    
+        if(Input.GetKeyDown(KeyCode.R) && !EndGame.GameEnding)    
         {
             Respawn();
         }

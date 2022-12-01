@@ -7,8 +7,8 @@ public class EndGame : MonoBehaviour
     public GameObject MainCamera;
     public GameObject Player;
     public Vector2 endPos = new Vector2();
+    public static bool GameEnding = false;
     Rigidbody2D rb2d;
-    Animator playerAnim;
     Animator crownAnim;
     Animator timeAnim;
 
@@ -22,6 +22,7 @@ public class EndGame : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DisableControls();
+        GameEnding = true;
     }
 
     private void DisableControls()
