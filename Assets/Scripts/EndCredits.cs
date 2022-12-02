@@ -9,4 +9,9 @@ public class EndCredits : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void PlayMusic()
+    {
+        GetComponent<AudioSource>().Play();
+    }
 }
