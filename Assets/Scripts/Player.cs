@@ -131,6 +131,36 @@ public class Player : MonoBehaviour
                 collision.gameObject.GetComponent<Animator>().SetTrigger("Burst");
                 collision.gameObject.GetComponent<SpriteRenderer>().color = slimeBod.GetComponent<SpriteShapeRenderer>().color;
             }
+            if (collision.gameObject.name == "CaveCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("SwampMusic");
+                FindObjectOfType<AudioManager>().Play("CaveDrips");
+                isSwamp = false;
+            }
+            if (collision.gameObject.name == "PlainsCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("PlainsMusic");
+                isHub = false;
+            }
+            if (collision.gameObject.name == "CrystalCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("KrystalKaveMusic");
+                isCave = false;
+            }
+            if (collision.gameObject.name == "JungleCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("JungleMusic");
+                isJungle = false;
+            }
+
+            if (collision.gameObject.name == "CastleCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
+                isCastle = false;
+                FindObjectOfType<AudioManager>().Play("CastleChorus");
+                isOtherCastle = false;
+            }
+           
             //Assigns respawn position
             resPos = collision.transform.position;
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
