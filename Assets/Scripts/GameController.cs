@@ -75,6 +75,19 @@ public class GameController : MonoBehaviour
     public void QuitToMenu()
     {
         Time.timeScale = 1;
+        FindObjectOfType<AudioManager>().Stop("SwampMusic");
+        FindObjectOfType<AudioManager>().Stop("CaveDrips");
+        //isSwamp = false;
+        FindObjectOfType<AudioManager>().Stop("PlainsMusic");
+        //isHub = false;
+        FindObjectOfType<AudioManager>().Stop("JungleMusic");
+        //isJungle = false;
+        FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
+        //isCave = false;
+        FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
+        //isCastle = false;
+        FindObjectOfType<AudioManager>().Stop("CastleChorus");
+        //isOtherCastle = false;
         SceneManager.LoadScene(0);
     }
 
