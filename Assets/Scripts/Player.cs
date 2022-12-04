@@ -345,6 +345,8 @@ public class Player : MonoBehaviour
             //Resets Time Slow
             TimeSlow s = FindObjectOfType<TimeSlow>();
             s.speedBackUp();
+            TimeAnim.SetBool("SlowDownTime", false);
+            TimeAnim.SetBool("SpeedUpTime", false);
 
             Invoke("slimeTrailReenabled", .3f);
             
