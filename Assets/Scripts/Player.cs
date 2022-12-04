@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "RespawnPoint")
         {
-            if (collision.gameObject.name != "FirstCheckpoint")
+            if (collision.gameObject.name != "FirstCheckpoint" || collision.gameObject.name != "CrystalFallCheckpoint") 
             {                
                 Instantiate(checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("Checkpoints");
@@ -170,7 +170,6 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Obstacles"))
         {
-            slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             TimeAnim.SetBool("SlowDownTime", false);
@@ -347,6 +346,8 @@ public class Player : MonoBehaviour
             s.speedBackUp();
             TimeAnim.SetBool("SlowDownTime", false);
             TimeAnim.SetBool("SpeedUpTime", false);
+            // disable trail from death position
+            slimeTrail.enabled = false;
 
             Invoke("slimeTrailReenabled", .3f);
             
