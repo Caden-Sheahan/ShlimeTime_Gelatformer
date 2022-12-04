@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     private bool isJungle;
     private bool isCastle;
     private bool isOtherCastle;
+    private bool isOver;
 
     //checkpoint variables
     public GameObject checkpointEffect;
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour
         isJungle = false;
         isCave = false;
         isCastle = false;
+        isOver = false;
+        isOtherCastle = false;
     }
 
     private void Update()
@@ -128,6 +131,36 @@ public class Player : MonoBehaviour
                 collision.gameObject.GetComponent<Animator>().SetTrigger("Burst");
                 collision.gameObject.GetComponent<SpriteRenderer>().color = slimeBod.GetComponent<SpriteShapeRenderer>().color;
             }
+            if (collision.gameObject.name == "CaveCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("SwampMusic");
+                FindObjectOfType<AudioManager>().Play("CaveDrips");
+                isSwamp = false;
+            }
+            if (collision.gameObject.name == "PlainsCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("PlainsMusic");
+                isHub = false;
+            }
+            if (collision.gameObject.name == "CrystalCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("KrystalKaveMusic");
+                isCave = false;
+            }
+            if (collision.gameObject.name == "JungleCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("JungleMusic");
+                isJungle = false;
+            }
+
+            if (collision.gameObject.name == "CastleCheckpoint")
+            {
+                FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
+                isCastle = false;
+                FindObjectOfType<AudioManager>().Play("CastleChorus");
+                isOtherCastle = false;
+            }
+           
             //Assigns respawn position
             resPos = collision.transform.position;
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -218,7 +251,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
             isCastle = false;
         }
-        if (collision.CompareTag("CASTLE") && isCastle == false)
+        if (collision.CompareTag("Castle") && isCastle == false)
         {
             FindObjectOfType<AudioManager>().Stop("SwampMusic");
             FindObjectOfType<AudioManager>().Stop("CaveDrips");
@@ -245,6 +278,23 @@ public class Player : MonoBehaviour
             isCave = false;
             FindObjectOfType<AudioManager>().Play("CastleChorus");
             isOtherCastle = true;
+        }
+        if (collision.CompareTag("GAMEOVER") && isOver == false)
+        {
+            FindObjectOfType<AudioManager>().Stop("SwampMusic");
+            FindObjectOfType<AudioManager>().Stop("CaveDrips");
+            isSwamp = false;
+            FindObjectOfType<AudioManager>().Stop("PlainsMusic");
+            isHub = false;
+            FindObjectOfType<AudioManager>().Stop("JungleMusic");
+            isJungle = false;
+            FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
+            isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
+            isCastle = false;
+            FindObjectOfType<AudioManager>().Stop("CastleChorus");
+            isOtherCastle = false;
+            isOver = true;
         }
     }
 
