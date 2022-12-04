@@ -11,6 +11,7 @@ public class TimeSlow : MonoBehaviour
     bool canSlowDown = true;
     //public static Action slowTimeEvent;
     //public static Action jetpackSlowTimeEvent;
+    bool canChangeState = true;
 
     public GameObject slimeBod;
     public GameObject slimeEyes;
@@ -25,8 +26,10 @@ public class TimeSlow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && canChangeState)
         {
+            canChangeState = false;
+            Invoke("AllowStateChange", 1.1f);
             if(canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSlow");
@@ -95,5 +98,10 @@ public class TimeSlow : MonoBehaviour
         canSlowDown = true;
         slowTime = false;
         speedTime = true;
+    }
+
+    public void AllowStateChange()
+    {
+        canChangeState = true;
     }
 }
