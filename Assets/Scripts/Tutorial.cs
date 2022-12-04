@@ -6,7 +6,7 @@ using TMPro;
 public class Tutorial : MonoBehaviour
 {
     public string[] TextTriggers = 
-        new string[]{"Intro1", "Intro2", "Intro3"};
+        new string[]{"Intro1", "Intro2", "Intro3" };
     public GameObject[] TutorialTexts = new GameObject[4];
 
     private void OnTriggerEnter2D(Collider2D col)
