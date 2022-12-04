@@ -157,8 +157,6 @@ public class Player : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
                 isCastle = false;
-                FindObjectOfType<AudioManager>().Play("CastleChorus");
-                isOtherCastle = false;
             }
            
             //Assigns respawn position
