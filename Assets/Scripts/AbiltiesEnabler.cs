@@ -27,12 +27,6 @@ public class AbiltiesEnabler : MonoBehaviour
         gameObject.GetComponent<Swing>().enabled = JsonManager.instance.GSD.hasSwing;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Gains power up 1
