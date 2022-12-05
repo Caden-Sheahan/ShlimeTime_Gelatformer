@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
-    public GameObject MainCamera;
-    public GameObject Player;
-    public Vector2 endPos = new Vector2();
-    public static bool GameEnding = false;
     Rigidbody2D rb2d;
     Animator crownAnim;
     Animator timeAnim;
+    public GameObject MainCamera;
+    public GameObject Player;
+    #region children
+    public GameObject child1;
+    public GameObject child2;
+    public GameObject child3;
+    public GameObject child4;
+    public GameObject child5;
+    public GameObject child6;
+    Vector2 childLoc1;
+    Vector2 childLoc2;
+    Vector2 childLoc3;
+    Vector2 childLoc4;
+    Vector2 childLoc5;
+    Vector2 childLoc6;
+    #endregion
+    public Vector2 endPos = new Vector2();
 
     private void Start()
     {
@@ -22,7 +35,6 @@ public class EndGame : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DisableControls();
-        GameEnding = true;
     }
 
     private void DisableControls()
@@ -31,6 +43,12 @@ public class EndGame : MonoBehaviour
         Player.transform.position = endPos;
         // stop moving
         rb2d.velocity = Vector2.zero;
+        child1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        child2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        child3.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        child4.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        child5.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        child6.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         // Stop Time if on (Ryan help here pls)
         TimeSlow s = FindObjectOfType<TimeSlow>();   
         s.speedBackUp();

@@ -29,7 +29,7 @@ public class TimeSlow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && canChangeState)
         {
             canChangeState = false;
-            Invoke("AllowStateChange", 1.1f);
+            Invoke("AllowStateChange", 1.25f);
             if(canSlowDown)
             {
                 FindObjectOfType<AudioManager>().Play("TimeSlow");

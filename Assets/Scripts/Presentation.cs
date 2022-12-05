@@ -7,10 +7,6 @@ public class Presentation : MonoBehaviour
     public GameObject Player;
 
     public Vector2[] warp = new Vector2[4];
-    //public Vector2 ReturnToHub = new Vector2(269, 9.5f);
-    //public Vector2 CaveWarp = new Vector2(-30, 7);
-    //public Vector2 JungleWarp = new Vector2(332, -2);
-    //public Vector2 CastleWarp = new Vector2(163, 123);
 
     // Update is called once per frame
     void Update()
@@ -25,15 +21,20 @@ public class Presentation : MonoBehaviour
         {
             Player.transform.position = warp[1];
         }
-        //warp to Jungle
+        //warp to Crystal
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Player.transform.position = warp[2];
         }
-        //warp to Castle
+        //warp to Jungle
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Player.transform.position = warp[3];
+        }
+        //warp to Castle
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Player.transform.position = warp[4];
         }
     }
 }
