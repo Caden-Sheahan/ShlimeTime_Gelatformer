@@ -118,7 +118,6 @@ public class Player : MonoBehaviour
                 force *= speedForceApplied;
                 //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 20, GetComponent<Rigidbody2D>().velocity.y + force.y* 20);
-
             }
         }
 
