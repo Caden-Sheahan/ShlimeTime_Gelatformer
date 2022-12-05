@@ -24,6 +24,7 @@ public class EndGame : MonoBehaviour
     Vector2 childLoc6;
     #endregion
     public Vector2 endPos = new Vector2();
+    public static bool GameEnding = false;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class EndGame : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DisableControls();
+        GameEnding = true;
     }
 
     private void DisableControls()
