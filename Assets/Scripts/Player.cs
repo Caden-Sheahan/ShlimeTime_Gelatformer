@@ -156,8 +156,6 @@ public class Player : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
                 isCastle = false;
-                FindObjectOfType<AudioManager>().Play("CastleChorus");
-                isOtherCastle = false;
             }
            
             //Assigns respawn position
@@ -262,6 +260,8 @@ public class Player : MonoBehaviour
             isCave = false;
             FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
             isCastle = true;
+            FindObjectOfType<AudioManager>().Stop("CastleChorus");
+            isOtherCastle = false;
         }
         if (collision.CompareTag("OTHERCASTLE") && isOtherCastle == false)
         {
@@ -274,6 +274,8 @@ public class Player : MonoBehaviour
             isJungle = false;
             FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
+            isCastle = false;
             FindObjectOfType<AudioManager>().Play("CastleChorus");
             isOtherCastle = true;
         }
