@@ -118,13 +118,12 @@ public class Player : MonoBehaviour
                 force *= speedForceApplied;
                 //GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + force.x * 20, GetComponent<Rigidbody2D>().velocity.y + force.y* 20);
-
             }
         }
 
         if (collision.gameObject.tag == "RespawnPoint")
         {
-            if (collision.gameObject.name != "FirstCheckpoint")
+            if (collision.gameObject.name != "FirstCheckpoint" || collision.gameObject.name != "CrystalFallCheckpoint") 
             {                
                 Instantiate(checkpointEffect, collision.gameObject.transform.position, Quaternion.identity);
                 FindObjectOfType<AudioManager>().Play("Checkpoints");
@@ -168,7 +167,6 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Obstacles"))
         {
-            slimeTrail.enabled = false;
             //Checks if player collided with an obstacle
             FindObjectOfType<AudioManager>().Play("SlimeDeath");
             TimeAnim.SetBool("SlowDownTime", false);
@@ -262,6 +260,8 @@ public class Player : MonoBehaviour
             isCave = false;
             FindObjectOfType<AudioManager>().Play("MountainCastleMusic");
             isCastle = true;
+            FindObjectOfType<AudioManager>().Stop("CastleChorus");
+            isOtherCastle = false;
         }
         if (collision.CompareTag("OTHERCASTLE") && isOtherCastle == false)
         {
@@ -274,6 +274,8 @@ public class Player : MonoBehaviour
             isJungle = false;
             FindObjectOfType<AudioManager>().Stop("KrystalKaveMusic");
             isCave = false;
+            FindObjectOfType<AudioManager>().Stop("MountainCastleMusic");
+            isCastle = false;
             FindObjectOfType<AudioManager>().Play("CastleChorus");
             isOtherCastle = true;
         }
@@ -345,6 +347,8 @@ public class Player : MonoBehaviour
             s.speedBackUp();
             TimeAnim.SetBool("SlowDownTime", false);
             TimeAnim.SetBool("SpeedUpTime", false);
+            // disable trail from death position
+            slimeTrail.enabled = false;
 
             Invoke("slimeTrailReenabled", .3f);
             
